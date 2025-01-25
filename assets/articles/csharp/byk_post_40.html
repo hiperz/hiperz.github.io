@@ -1,0 +1,16 @@
+<p data-ke-size="size16">By using the HMACSHA256 class in C#, you can easily convert a user's password into an encrypted
+    string with very simple code.</p>
+<br>
+<pre id="code_1676461079220" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>    public static class CredentialHelper
+    {
+        public static string GetHMACSHA256Hash(string username, string password)
+        {
+            var key = Encoding.ASCII.GetBytes(username);
+            var data = Encoding.ASCII.GetBytes(password);
+            return Convert.ToBase64String(new HMACSHA256(key).ComputeHash(data));
+        }
+    }</code></pre>
+<br>
+<p data-ke-size="size16">As shown above, you can create a static class and use the function to generate a hash string
+    from the username and password entered by the user. You can then store this hash string and compare it with the hash
+    generated from the username/password combination entered by the user during login to verify.</p>

@@ -1,0 +1,40 @@
+<p data-ke-size="size16">Normally, after JSON Serialization, the data is stored as a text file or in a database, but the
+    enum values are stored in numeric form, which decreases readability when opening the JSON string. Therefore, it is
+    common to store the enum type variable's value in a string format. In such cases, you can declare an attribute on a
+    specific member variable as shown below.</p>
+<br>
+<pre id="code_1674099285182" class="csharp language-csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>    using Newtonsoft.Json;
+        using Newtonsoft.Json.Converters;
+        
+        public enum CompanyType {
+            Apple,
+            Samsung,
+        }
+    
+        public class Company
+        {
+            [JsonConverter(typeof(StringEnumConverter))]
+            public CompanyType CompanyType { get; set; }
+        }</code></pre>
+<br>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">If the member variable is in the form of an array or list, you can specify the attribute as
+    shown below.</p>
+<br>
+<pre id="code_1674103182054" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>    using Newtonsoft.Json;
+        using Newtonsoft.Json.Converters;
+        
+        public enum CompanyType {
+            Apple,
+            Samsung,
+        }
+    
+        public class Company
+        {
+            [JsonConverter(typeof(StringEnumConverter))]
+            public CompanyType CompanyType { get; set; }
+            
+            [JsonProperty(ItemConverterType = typeof(StringEnumConverter))]
+            public List&lt;CompanyType&gt; CompanyTypes { get; set; }
+        }</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
