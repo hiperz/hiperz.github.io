@@ -1,0 +1,48 @@
+<p data-ke-size="size16">&nbsp;These days, when exchanging messages between different apps or services, complex
+    structured data is mostly converted to JSON. Of course, there are still many places that use XML. Therefore, there
+    are cases where the data received in XML needs to be serialized to JSON and stored or sent to another node.</p>
+<p data-ke-size="size16">&nbsp;In such cases, you can easily serialize it with just a method call using Json.NET.</p>
+<br>
+<pre id="code_1679636243891" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>string xml = @"&lt;?xml version='1.0' standalone='no'?&gt;
+&lt;root&gt;
+    &lt;person id='1'&gt;
+    &lt;name&gt;Alan&lt;/name&gt;
+    &lt;url&gt;http://www.google.com&lt;/url&gt;
+    &lt;/person&gt;
+    &lt;person id='2'&gt;
+    &lt;name&gt;Louis&lt;/name&gt;
+    &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+    &lt;/person&gt;
+&lt;/root&gt;";
+
+XmlDocument doc = new XmlDocument();
+doc.LoadXml(xml);
+
+string json = JsonConvert.SerializeXmlNode(doc);
+
+Console.WriteLine(json);
+// {
+//   "?xml": {
+//     "@version": "1.0",
+//     "@standalone": "no"
+//   },
+//   "root": {
+//     "person": [
+//       {
+//         "@id": "1",
+//         "name": "Alan",
+//         "url": "http://www.google.com"
+//       },
+//       {
+//         "@id": "2",
+//         "name": "Louis",
+//         "url": "http://www.yahoo.com"
+//       }
+//     ]
+//   }
+// }</code></pre>
+<br>
+<p data-ke-size="size16">Original text: <a href="https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm"
+        target="_blank" rel="noopener">https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm</a></p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>

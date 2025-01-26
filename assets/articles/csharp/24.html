@@ -1,0 +1,125 @@
+<p data-ke-size="size16">
+</p>
+Often, when dealing with variable JSON structures in C# or when you only need to extract or modify specific data within
+a JSON, it is much more efficient to parse the JSON using JObject and then use the SelectToken/SelectTokens functions to
+find the desired token and retrieve or manipulate its value, rather than creating individual classes to map the JSON
+data.
+<br><br>
+Original text: <a href="https://www.newtonsoft.com/json/help/html/SelectToken.htm">https://www.newtonsoft.com/json/help/html/SelectToken.htm</a>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>1. SelectToken</b></h2>
+&nbsp;SelectToken is a method that returns a JToken and uses a string path for the child tokens. SelectToken either
+returns
+the child token or, if it cannot find the token at the path location, returns a null reference. The path consists of
+property names separated by dots and array indexes. For example: Manufacturers[0].Name.
+<br>
+<br>
+<pre id="code_1674611980743" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>JObject o = JObject.Parse(@"{
+      'Stores': [
+        'Lambton Quay',
+        'Willis Street'
+      ],
+      'Manufacturers': [
+        {
+          'Name': 'Acme Co',
+          'Products': [
+            {
+              'Name': 'Anvil',
+              'Price': 50
+            }
+          ]
+        },
+        {
+          'Name': 'Contoso',
+          'Products': [
+            {
+              'Name': 'Elbow Grease',
+              'Price': 99.95
+            },
+            {
+              'Name': 'Headlight Fluid',
+              'Price': 4
+            }
+          ]
+        }
+      ]
+    }");
+    
+    string name = (string)o.SelectToken("Manufacturers[0].Name");
+    // Acme Co
+    
+    decimal productPrice = (decimal)o.SelectToken("Manufacturers[0].Products[0].Price");
+    // 50
+    
+    string productName = (string)o.SelectToken("Manufacturers[1].Products[0].Name");
+    // Elbow Grease</code></pre>
+<br>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>2. <span style="color: #000000;">SelectToken with JSONPath</span></b></h2>
+&nbsp;You can use JSONPath (<a href="https://goessner.net/articles/JsonPath/" target="_blank"
+  rel="noopener">https://goessner.net/articles/JsonPath/</a>) expressions to retrieve tokens
+</p>
+<br>
+<pre id="code_1674612703318" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>JObject o = JObject.Parse(@"{
+      'Stores': [
+        'Lambton Quay',
+        'Willis Street'
+      ],
+      'Manufacturers': [
+        {
+          'Name': 'Acme Co',
+          'Products': [
+            {
+              'Name': 'Anvil',
+              'Price': 50
+            }
+          ]
+        },
+        {
+          'Name': 'Contoso',
+          'Products': [
+            {
+              'Name': 'Elbow Grease',
+              'Price': 99.95
+            },
+            {
+              'Name': 'Headlight Fluid',
+              'Price': 4
+            }
+          ]
+        }
+      ]
+    }");
+    
+    // manufacturer with the name 'Acme Co'
+    JToken acme = o.SelectToken("$.Manufacturers[?(@.Name == 'Acme Co')]");
+    
+    Console.WriteLine(acme);
+    // { "Name": "Acme Co", Products: [{ "Name": "Anvil", "Price": 50 }] }
+    
+    // name of all products priced 50 and above
+    IEnumerable&lt;JToken&gt; pricyProducts = o.SelectTokens("$..Products[?(@.Price &gt;= 50)].Name");
+    
+    foreach (JToken item in pricyProducts)
+    {
+        Console.WriteLine(item);
+    }
+    // Anvil
+    // Elbow Grease</code></pre>
+<br>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>3. <span style="color: #000000;">SelectToken with LINQ</span></b></h2>
+&nbsp;You can use the SelectToken function together with standard LINQ functions to retrieve tokens.
+<br><br>
+<pre id="code_1674612664768" class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>IList&lt;string&gt; storeNames = o.SelectToken("Stores").Select(s =&gt; (string)s).ToList();
+    // Lambton Quay
+    // Willis Street
+    
+    IList&lt;string&gt; firstProductNames = o["Manufacturers"].Select(m =&gt; (string)m.SelectToken("Products[1].Name")).ToList();
+    // null
+    // Headlight Fluid
+    
+    decimal totalPrice = o["Manufacturers"].Sum(m =&gt; (decimal)m.SelectToken("Products[0].Price"));
+    // 149.95</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
