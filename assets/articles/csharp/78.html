@@ -90,14 +90,14 @@
                 project.ManagedUI = new ManagedUI();
     
                 project.ManagedUI.InstallDialogs.Add&lt;MyAppInstaller.WelcomeDialog&gt;()
-                                                //.Add&lt;MyAppInstaller.LicenceDialog&gt;() // 라이센스 동의 화면 숨김
-                                                //.Add&lt;MyAppInstaller.FeaturesDialog&gt;() // Feature 선택 화면 숨김
+                                                .Add&lt;MyAppInstaller.LicenceDialog&gt;()
+                                                .Add&lt;MyAppInstaller.FeaturesDialog&gt;()
                                                 .Add&lt;MyAppInstaller.InstallDirDialog&gt;()
                                                 .Add&lt;MyAppInstaller.ProgressDialog&gt;()
                                                 .Add&lt;MyAppInstaller.ExitDialog&gt;();
     
                 project.ManagedUI.ModifyDialogs.Add&lt;MyAppInstaller.MaintenanceTypeDialog&gt;()
-                                               //.Add&lt;MyAppInstaller.FeaturesDialog&gt;() // Feature 선택 화면 숨김
+                                               .Add&lt;MyAppInstaller.FeaturesDialog&gt;()
                                                .Add&lt;MyAppInstaller.ProgressDialog&gt;()
                                                .Add&lt;MyAppInstaller.ExitDialog&gt;();
     
