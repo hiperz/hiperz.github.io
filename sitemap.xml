@@ -1,111 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://hiperz.github.io/#/json-tools/formatter</loc>
-        <lastmod>2025-01-27T08:37:45.068Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fgames%2Fspeedatoz</loc>
+        <lastmod>2025-01-27T13:25:08.178Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/json-tools/string-to-json</loc>
-        <lastmod>2025-01-27T08:37:45.069Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fjson-tools%2Fjson-to-csclass</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/json-tools/json-to-string</loc>
-        <lastmod>2025-01-27T08:37:45.069Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fjson-tools%2Fformatter</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/json-tools/json-to-csclass</loc>
-        <lastmod>2025-01-27T08:37:45.069Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fjson-tools%2Fjson-to-string</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/other-tools/uuid-generator</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fjson-tools%2Fstring-to-json</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/other-tools/toss-interest-calc</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fother-tools%2Fuuid-generator</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/games/speedatoz</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fother-tools%2Ftoss-interest-calc</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/article-list</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F23</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/23</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F24</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/24</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F32</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/32</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F34</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/34</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F38</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/38</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F40</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/40</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F45</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/45</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F47</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/47</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F53</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
+        </url>
     <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/53</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
+        <loc>https://hiperz.github.io/?link=%2Fblog%2Farticles%2Fcsharp%2F78</loc>
+        <lastmod>2025-01-27T13:25:08.179Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/#/blog/articles/csharp/78</loc>
-        <lastmod>2025-01-27T08:37:45.070Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+        </url>
 </urlset>
