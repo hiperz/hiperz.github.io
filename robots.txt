@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://hiperz.github.io/sitemap.xml
