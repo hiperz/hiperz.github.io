@@ -69,5 +69,11 @@
   "Calculate": "계산하기",
   "Days": "일",
   "General": "일반",
-  "Toss": "토스"
+  "Toss": "토스",
+  "Base64 Encoding": "Base64 인코딩",
+  "Base64 Decoding": "Base64 디코딩",
+  "Encoding image or text to base64 text": "이미지 또는 텍스트를 base64 텍스트로 인코딩 합니다.",
+  "Decoding base64 text to image or text": "base64 텍스트를 이미지 또는 텍스트로 디코딩 합니다.",
+  "Choose an image file": "이미지 파일 선택",
+  "Paste": "붙여넣기"
 }
