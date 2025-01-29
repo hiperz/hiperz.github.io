@@ -75,5 +75,18 @@
   "Encoding image or text to base64 text": "이미지 또는 텍스트를 base64 텍스트로 인코딩 합니다.",
   "Decoding base64 text to image or text": "base64 텍스트를 이미지 또는 텍스트로 디코딩 합니다.",
   "Choose an image file": "이미지 파일 선택",
-  "Paste": "붙여넣기"
+  "Paste": "붙여넣기",
+  "USD": "미국달러(USD)",
+  "Bitcoin Market Prices": "비트코인 마켓 가격정보",
+  "It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium.": "업비트의 실시간 비트코인 마켓 가격들과 바이낸스 가격을 비교해서 보여주고 김치 프리미엄을 계산해서 보여줍니다.",
+  "Market": "마켓",
+  "Upbit Price": "업비트 가격",
+  "Binance Price": "바이낸스 가격",
+  "Kimchi Premium": "김치 프리미엄",
+  "Trading": "트레이딩",
+  "Bitcoin": "비트코인",
+  "Ethereum": "이더리움",
+  "Ripple": "리플",
+  "Doge": "도지",
+  "Solana": "솔라나"
 }
