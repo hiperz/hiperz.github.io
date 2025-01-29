@@ -1,0 +1,175 @@
+<p data-ke-size="size16">※. This screenshot is based on Visual Studio 2022.</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>1. Open Visual Studio and create a new WPF project.</b></h2>
+<p data-ke-size="size16">Search for WPF and select the WPF Application project template.</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVTvhj%2FbtrYqLYRGCK%2FCVGWVkD6S56zMm9m4EJKjK%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">Specify the project path, solution name, and project name.</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FDA6XA%2FbtrYrmYB9nD%2FKyJcVO6Svh70neIvwRTbE0%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">Since this explanation is based on .Net 6.0 or higher, select 6.0.</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMt23t%2FbtrYtxLWmVB%2F43bmNdFQGQFcd6tVdjsUck%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">
+    Once the project is created, check the solution and files in the project in Solution Explorer as shown below.
+</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5Qj6D%2FbtrYrm5oBFJ%2FJNdqNQCWcTK83vptnCS9F1%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>2. Install NuGet Packages</b></h2>
+<p data-ke-size="size16">
+    Install the following packages from the NuGet Package Manager or open the project file by double-clicking the project (MyTestApp) in Solution Explorer and add the following PackageReference tags directly and save.
+</p>
+<pre id="code_1675820933085" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>  &lt;ItemGroup&gt;
+    &lt;PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" /&gt;
+    &lt;PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" /&gt;
+    &lt;/ItemGroup&gt;</code></pre>
+<p data-ke-size="size16">※. I personally do not use the Nullable option, so I removed it.</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F5phz4%2FbtrYrjnoWEc%2F2kDBKAX7T7glKmyHHyfxzk%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size18">&nbsp;</p>
+<h2 data-ke-size="size26"><b>3. Create Folders and MainWindowViewModel</b></h2>
+<p data-ke-size="size16">
+    Create two folders named Views and ViewModels in the project, then move the MainWindow.xaml file to the Views folder. The folder names are personal preferences, so you can name them as you like.
+</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvGIAt%2FbtrYrUOtYEf%2FwXrshuzzbIje5jKcAbB3c0%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16"></p>
+    Since the MainWindow.xaml file has been moved to the Views folder, modify the StartupUri in App.xaml as follows.
+</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FUTt3R%2FbtrYriIMzz7%2Fffs3KylhMNrhHharALeE20%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">Create a new class file named MainWindowViewModel.cs in the ViewModels folder.</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">
+    To use the code generation feature of the MVVM toolkit, add the partial keyword and define the class as inheriting from ObservableObject as follows.
+</p>
+<pre
+    id="code_1675821808551"
+    class="csharp"
+    data-ke-language="csharp"
+    data-ke-type="codeblock"
+><code>using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace MyTestApp.ViewModels
+{
+        public partial class MainWindowViewModel : ObservableObject
+        {
+        }
+}</code></pre>
+<p data-ke-size="size16"></p>
+    Since C# does not support multiple inheritance, if the ViewModel needs to inherit from a specific class, declare the INotifyPropertyChanged attribute instead of inheriting from ObservableObject as follows.
+</p>
+<pre
+    id="code_1675822057724"
+    class="csharp"
+    data-ke-language="csharp"
+    data-ke-type="codeblock"
+><code>using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace MyTestApp.ViewModels
+{
+        public class MyBaseClass
+        {
+        }
+
+        [INotifyPropertyChanged]
+        public partial class MainWindowViewModel : MyBaseClass
+        {
+                public MainWindowViewModel()
+                {
+                }
+        }
+}</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>4. Create ViewModel Locator Class</b></h2>
+<p data-ke-size="size16">Create a VmLocator.cs file in the project.</p>
+<p>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAwX2k%2FbtrYqvhQRG3%2FGYdgAh1N0I8KEgEnes5kq0%2Fimg.png" alt="">
+</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">
+    To use Dependency Injection in the ViewModel, define the dependencies in this file as follows.
+</p>
+<pre
+    id="code_1675822475503"
+    class="csharp"
+    data-ke-language="csharp"
+    data-ke-type="codeblock"
+><code>using Microsoft.Extensions.DependencyInjection;
+using MyTestApp.ViewModels;
+using System;
+
+namespace MyTestApp
+{
+        public class VmLocator
+        {
+                public IServiceProvider Services { get; }
+
+                public VmLocator()
+                {
+                        var services = new ServiceCollection();
+
+                        services.AddTransient&lt;MainWindowViewModel&gt;();
+
+                        Services = services.BuildServiceProvider();
+                }
+
+                public MainWindowViewModel MainWindowVM =&gt; Services.GetService&lt;MainWindowViewModel&gt;();
+        }
+}</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">
+    Now, add a tag in App.xaml to create an instance of VmLocator when the app runs.
+</p>
+<pre
+    id="code_1675822744263"
+    class="html xml"
+    data-ke-language="html"
+    data-ke-type="codeblock"
+><code>&lt;Application x:Class="MyTestApp.App"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:local="clr-namespace:MyTestApp"
+                         StartupUri="Views/MainWindow.xaml"&gt;
+        &lt;Application.Resources&gt;
+                &lt;ResourceDictionary&gt;
+                        &lt;local:VmLocator x:Key="VmLocator" /&gt;
+                &lt;/ResourceDictionary&gt;
+        &lt;/Application.Resources&gt;
+&lt;/Application&gt;</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-ke-size="size26"><b>5. Bind ViewModel to View</b></h2>
+<p data-ke-size="size16">Bind the DataContext in the MainWindow.xaml file to MainWindowVM as follows.</p>
+<pre
+    id="code_1675822930992"
+    class="html xml"
+    data-ke-language="html"
+    data-ke-type="codeblock"
+><code>&lt;Window x:Class="MyTestApp.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:local="clr-namespace:MyTestApp"
+                mc:Ignorable="d"
+                Title="MainWindow" Height="450" Width="800"
+                DataContext="{Binding Source={StaticResource VmLocator}, Path=MainWindowVM}"&gt;
+        &lt;Grid&gt;
+
+        &lt;/Grid&gt;
+&lt;/Window&gt;</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16"></p>
+    This is the boilerplate code for developing a WPF app using the MVVM pattern. Add new Views to the Views folder and the corresponding ViewModels to the ViewModels folder. Then, declare the ViewModel instance in the VmLocator to be created by the Dependency Injection service and bind it to the View's DataContext in the same way as MainWindowVM.
+</p>
+<p data-ke-size="size16">&nbsp;</p>

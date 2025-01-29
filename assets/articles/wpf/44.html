@@ -1,0 +1,128 @@
+<p data-ke-size="size16">
+  In the previous post, we explained how to create a MainWindowViewModel class that inherits from ObservableObject in
+  the ViewModels folder and bind it to the DataContext of the MainWindow.xaml view.
+</p>
+<p>
+  <img
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbNdLnZ%2Fbtr0JBk4UNZ%2FMmYZK5kjckFZYzn9uM3Ho1%2Fimg.png"
+    alt=""
+  />
+</p>
+<p data-ke-size="size16">
+  Now, let's declare member variables in the created ViewModel and bind them to the TextBox control in the View.
+</p>
+<p data-ke-size="size16">
+  When coding with the traditional MVVM pattern, the most annoying part was declaring member variables and notifying the
+  PropertyChange event for each variable as shown below.
+</p>
+<pre
+  id="code_1677248181508"
+  class="csharp"
+  data-ke-language="csharp"
+  data-ke-type="codeblock"
+><code>namespace MyTestApp.ViewModels
+{
+    public class MainWindowViewModel : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private string title;
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                title = value;
+                OnPropertyChanged();
+            }
+        }
+     }
+ }</code></pre>
+<p data-ke-size="size16">
+  Declaring a single variable is so verbose, and if you have to write 10 or 20 more, the amount of coding is
+  considerable. It also makes the code feel cluttered. However, with CommunityToolkit.Mvvm in .Net 6 or higher, you can
+  simply add an attribute, and the Code Generator will automatically generate the above code at compile time.
+</p>
+<p data-ke-size="size16">So the code becomes very simple as shown below. Excellent~!</p>
+<pre
+  id="code_1677247755753"
+  class="csharp"
+  data-ke-language="csharp"
+  data-ke-type="codeblock"
+><code>using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace MyTestApp.ViewModels
+{
+    public partial class MainWindowViewModel : ObservableObject
+    {
+        [ObservableProperty]
+        private string title;
+
+        public MainWindowViewModel() 
+        {
+            Title = "Initial Value";
+        }
+    }
+}</code></pre>
+<p data-ke-size="size16">
+  When declaring member variables, you must use private and start the variable name with a lowercase letter. This is
+  because the Code Generator creates a public variable with the same name starting with an uppercase letter.
+</p>
+<p data-ke-size="size16">
+  Do not use getter/setter when declaring variables like title above. If you sometimes mindlessly add { get; set; }, you
+  might waste precious time wondering why VS throws an error...
+</p>
+<p data-ke-size="size16">
+  To use the above attribute for Code Generation, you need to add the partial keyword to the class. This is because the
+  Code Generator creates a partial class with the same name in another file.
+</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">Now, open MainWindowView.xaml and add a TextBox control to the View.</p>
+<pre
+  id="code_1677249234033"
+  class="html xml"
+  data-ke-language="html"
+  data-ke-type="codeblock"
+><code>&lt;Window x:Class="MyTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyTestApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource VmLocator}, Path=MainWindowVM}"&gt;
+    &lt;Grid&gt;
+        &lt;TextBox&gt;&lt;/TextBox&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;</code></pre>
+<p data-ke-size="size16">
+  Now, bind the Text property of the TextBox control to the Title declared in the ViewModel as shown below.
+</p>
+<pre id="code_1677249303180" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>    &lt;Grid&gt;
+        &lt;TextBox Text="{Binding Title}"&gt;&lt;/TextBox&gt;
+    &lt;/Grid&gt;</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">
+  Press F5 to run the program, and since the constructor of the ViewModel assigns "Initial Value" to Title, the value
+  will be displayed in the TextBox as shown below.
+</p>
+<p>
+  <img
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FWudcX%2Fbtr0KG0MZra%2FjZhgOVAh1PCUNR9bRJPbm0%2Fimg.png"
+    alt=""
+  />
+</p>
+<p data-ke-size="size16">
+  In this post, we learned how to declare variables in the ViewModel and bind those variables to controls in the View.
+  In the next post, we will learn how to hook events in the ViewModel when the bound value changes due to user input.
+</p>
+<p data-ke-size="size16">&nbsp;</p>
