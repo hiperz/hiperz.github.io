@@ -16,7 +16,7 @@
   "Blog Articles": "블로그 전체 글목록",
   "MENU": "메뉴",
   "Search": "검색",
-  "🚀 Speed Typing A to Z 🚀": "🚀 A부터 Z까지 빨리 타이핑하기 🚀",
+  "🚀 Speed Typing A to Z 🚀": "🚀 스피드 A-To-Z 타이핑 🚀",
   "JSON to C# Class": "JSON으로 C# 클래스 생성하기",
   "Convert JSON to C# Class": "JSON 텍스트를 사용하여 C# 클래스를 자동으로 생성합니다.",
   "Use Auto Pluralize": "변수명 자동 복수 처리",
@@ -88,5 +88,6 @@
   "Ethereum": "이더리움",
   "Ripple": "리플",
   "Doge": "도지",
-  "Solana": "솔라나"
+  "Solana": "솔라나",
+  "sec": "초"
 }
