@@ -89,5 +89,7 @@
   "Ripple": "리플",
   "Doge": "도지",
   "Solana": "솔라나",
-  "sec": "초"
+  "sec": "초",
+  "Total read": "조회수",
+  "Total visit": "방문자수"
 }
