@@ -90,11 +90,17 @@
   "Doge": "도지",
   "Solana": "솔라나",
   "sec": "초",
+  "seconds": "초",
   "Total read": "조회수",
   "Total visit": "방문자수",
   "RESTART": "재시작",
   "Posts related to this category": "이 카테고리의 다른 포스팅",
   "Change language": "언어 바꾸기",
   "Publish Date": "발행일",
-  "Click or touch here, then type": "여기를 터치(클릭)후 입력하세요."
+  "Click or touch here, then type": "여기를 터치(클릭)후 입력하세요.",
+  "You ranked in the world top 100!": "세계 랭킹 100위 안에 들었어요!",
+  "Please enter your name here": "여기에 이름을 입력하세요",
+  "Your record is": "당신의 기록은",
+  "Save": "기록하기",
+  "I dont' want": "싫어요"
 }
