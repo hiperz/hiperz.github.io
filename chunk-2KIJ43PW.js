@@ -1,4 +1,4 @@
-import{p as w}from"./chunk-ZL7XJN45.js";import{Jc as y,X as b,a as p,aa as f,b as d,p as u}from"./chunk-VECOZZOS.js";var m=[{category:"csharp",id:23,content:`<p>Normally, after JSON Serialization, the data is stored as a text file or in a database, but the\r
+import{p as w}from"./chunk-Z5QJVAFB.js";import{Jc as y,X as b,a as p,aa as f,b as d,p as u}from"./chunk-VECOZZOS.js";var m=[{category:"csharp",id:23,content:`<p>Normally, after JSON Serialization, the data is stored as a text file or in a database, but the\r
     enum values are stored in numeric form, which decreases readability when opening the JSON string. Therefore, it is\r
     common to store the enum type variable's value in a string format. In such cases, you can declare an attribute on a\r
     specific member variable as shown below.</p>\r
