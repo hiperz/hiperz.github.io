@@ -1,4 +1,4 @@
-import{n as w}from"./chunk-Z5UK7K2Z.js";import{Gc as y,X as b,a as d,aa as f,b as m,p as u}from"./chunk-J6VIUCVX.js";var h=[{category:"csharp",id:23,content:`<p>Normally, after JSON Serialization, the data is stored as a text file or in a database, but the\r
+import{n as w}from"./chunk-4GRGGTBP.js";import{Gc as y,X as b,a as d,aa as f,b as m,p as u}from"./chunk-J6VIUCVX.js";var h=[{category:"csharp",id:23,content:`<p>Normally, after JSON Serialization, the data is stored as a text file or in a database, but the\r
     enum values are stored in numeric form, which decreases readability when opening the JSON string. Therefore, it is\r
     common to store the enum type variable's value in a string format. In such cases, you can declare an attribute on a\r
     specific member variable as shown below.</p>\r
@@ -506,7 +506,110 @@ Console.WriteLine(json);\r
         alt="">\r
 </p>\r
 <p>In the next post, we will learn how to filter the target files for deployment and create\r
-    shortcut icons on the desktop and start menu.</p>`},{category:"jsts",id:6,content:`<p>\r
+    shortcut icons on the desktop and start menu.</p>`},{category:"jsts",id:31,content:`<h3>1. Traditional Method</h3>\r
+<p>Declare a temporary variable, copy the value, and then swap.</p>\r
+<pre><code>\r
+let a = 10;\r
+let b = 20;\r
+const temp = a;\r
+a = b;\r
+b = temp;\r
+    </code>\r
+</pre>\r
+\r
+<h3>2. Modern Method</h3>\r
+<p>By using arrays and destructuring assignment, swapping can be done in a single line.</p>\r
+<pre><code>\r
+[b, a] = [a, b];\r
+    </code>\r
+</pre>\r
+`},{category:"jsts",id:39,content:`<h3>Double Exclamation Mark (!!) in JavaScript</h3>\r
+<p>In JavaScript, the double exclamation mark (!!) operator is used to convert a value to a boolean.</p>\r
+\r
+<pre><code>\r
+const a = [1, 2, 3];\r
+const is_a_truthy = !!a; // true\r
+\r
+const b = null;\r
+const is_b_truthy = !!b; // false\r
+\r
+const c = 0;\r
+const is_c_truthy = !!c; // false\r
+\r
+const d = "0";\r
+const is_d_truthy = !!d; // true\r
+    </code>\r
+</pre>\r
+`},{category:"jsts",id:55,content:`<h3>1. Access Last Element Using Array Length</h3>\r
+<p>Retrieve the last element by specifying the index using the array length.</p>\r
+<pre><code>\r
+const arr = [1, 2, 3, 4, 5];\r
+\r
+// last element by length\r
+console.log(arr[arr.length - 1]);\r
+    </code>\r
+</pre>\r
+\r
+<h3>2. Retrieve Last Element Using Slice Method</h3>\r
+<p>Use the <code>slice</code> method to get the last element.</p>\r
+<pre><code>\r
+const arr = [1, 2, 3, 4, 5];\r
+\r
+// last element by slice\r
+console.log(...arr.slice(-1));\r
+    </code>\r
+</pre>\r
+\r
+<h3>3. Retrieve Last Element Using Pop Method</h3>\r
+<p>The <code>pop</code> method removes and returns the last element of an array.</p>\r
+<pre><code>\r
+const arr = [1, 2, 3, 4, 5];\r
+\r
+// last element by pop\r
+console.log(arr.pop());\r
+    </code>\r
+</pre>\r
+\r
+<h3>Performance Comparison (Chrome)</h3>\r
+<p>Comparing the performance of the three methods.</p>\r
+<pre><code>\r
+const arr = [1, 2, 3, 4, 5];\r
+\r
+// last element by length\r
+console.time('lastindex');\r
+console.log(arr[arr.length - 1]);\r
+console.timeEnd('lastindex');\r
+\r
+// last element by slice\r
+console.time('slice');\r
+console.log(...arr.slice(-1));\r
+console.timeEnd('slice');\r
+\r
+// last element by pop\r
+console.time('pop');\r
+console.log(arr.pop());\r
+console.timeEnd('pop');\r
+    </code>\r
+</pre>\r
+\r
+<p><strong>Result:</strong> The <code>pop()</code> method performs the fastest.</p>\r
+<p>\r
+  Although using <code>arr.length - 1</code> is common, the performance difference suggests that using\r
+  <code>pop()</code> is the better choice.\r
+</p>\r
+`},{category:"jsts",id:58,content:`<h3>Automatically Removing Unused Imports in VSCode</h3>\r
+<p>\r
+  When developing in JavaScript/TypeScript, if you import an object and later remove all related code, it\u2019s best to\r
+  remove the import statement as well. Instead of manually searching for and deleting unused imports, you can use a\r
+  VSCode shortcut to do it automatically.\r
+</p>\r
+\r
+<h3>Example</h3>\r
+<p>In the example below, <code>HostListener</code> is no longer referenced:</p>\r
+<p><strong>VSCode Default Shortcut (Windows)</strong></p>\r
+<p><code>Alt + Shift + O</code></p>\r
+<p>Pressing this shortcut will make VSCode automatically remove the unused import.</p>\r
+`},{category:"jsts",id:6,content:`<p>\r
   First, go to the PlanetScale (<a href="https://planetscale.com/" target="_blank" rel="noopener"\r
     >https://planetscale.com/</a\r
   >) website and complete the account creation process.\r
@@ -780,6 +883,171 @@ export class BlaBlaComponent implements OnInit {\r
 }</code></pre>\r
 <p class="my-2">\r
   &nbsp;I hope this helps those who are hosting web apps with Angular SPA on Github and experiencing redirection issues.\r
+</p>\r
+`},{category:"windows",id:18,content:`<h2>1. Installing IIS Management Console and FTP Service</h2>\r
+\r
+<p>Go to the Control Panel, navigate to "Apps & Features," and click "Programs and Features."</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxQs9N%2FbtrWv64Scf4%2FGhVklb64oThHxQBXgatoe0%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Click "Turn Windows features on or off."</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fck5l49%2FbtrWuO4rOvp%2FrZw8bK31xqBaV0QHnfck00%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Select "FTP Service" and "IIS Management Console" and install them.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEU0wl%2FbtrWuOwD8tt%2FuynnFPhKLoiShPx15enH10%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+<br>\r
+\r
+<h2>2. Creating a New FTP Site</h2>\r
+<p>Open the IIS Manager app.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdNrFgj%2FbtrWxrGWStA%2FkpZtHRKNbwFgxthcR3rx8K%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Right-click "Sites" and select "Add FTP Site..."</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcg0vdq%2FbtrWyLrnGtY%2FrkPhWhH0iO6YnKvRqGLX7K%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Set an FTP site name and specify the directory path for the FTP server.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtDACM%2FbtrWwH4yMc6%2FwKlvikoZrF2UuVK6iN9UYK%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Select "No SSL."</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMjyMr%2FbtrWw8ARGux%2FHKQqVm1rLiNBK1KANU1Lq1%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>\r
+  Check "Basic Authentication," allow access to a specific user account (e.g., ftptest), enable read/write permissions,\r
+  and click "Finish."\r
+</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbAt1Wr%2FbtrWwpC6yRY%2FMMrKLqQxjkTmBpg9CVZupK%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+<br>\r
+\r
+<h2>3. Configuring the Firewall</h2>\r
+<p>Open the Windows Firewall advanced settings console.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGnQlG%2FbtrWxsFSvIL%2FlaKqLZUbVYWKESVuFGYk60%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Enable all three predefined FTP-related inbound rules.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsTosa%2FbtrWyOBENxc%2FxXMlHmAUvICyRXjHDueGsK%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+<br>\r
+\r
+<h2>4. Adding a User Account for FTP Access</h2>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAC7OT%2FbtrWx6P7QI7%2F5GS1qSq2EAOwaJ7A9ak3d0%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Right-click the Windows Start button and select "Computer Management."</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcFqO2A%2FbtrWxqH4jfT%2FnH7vwcXQDAkZk8bDu0Opx0%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>Right-click "Users" and select "New User..." to create a new user account.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FviPvr%2FbtrWx72x6Sp%2FqV6NDQYPOGi3cZqBKJNTKK%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FrMreG%2FbtrWw7BZjG8%2FBQH3qcCekrogMQZXeFAbMk%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+<br>\r
+\r
+<h2>5. Granting User Permissions to the FTP Folder</h2>\r
+<p>In IIS Manager, right-click the FTP site and select "Edit Permissions."</p>\r
+<p>Go to the "Security" tab, click "Edit," then "Add" the new user (e.g., ftptest), and grant full control.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbdlTHc%2FbtrWteJaGFD%2FhkJre2RkDhfnKF9lLsXOck%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+<p>\r
+  <img\r
+    class="max-w-[800px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcT1fBm%2FbtrWsjjF5zz%2FFn4facOf3Oe1vhVk7tj2Y0%2Fimg.png"\r
+    alt=""\r
+  />\r
+</p>\r
+\r
+<h2>6. Testing the FTP Connection</h2>\r
+<p>To verify the setup, use an FTP client like FileZilla or WinSCP.</p>\r
+<p>Alternatively, open a terminal and run <code>ftp localhost</code>, then enter the user credentials.</p>\r
+<p>Use the <code>dir</code> command to check directory access.</p>\r
+<p>\r
+  <img\r
+    class="max-w-[500px] border"\r
+    src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYVxka%2FbtrWsUKGnwT%2FNqZNg8VnKU5hEeWElhC9S0%2Fimg.png"\r
+    alt=""\r
+  />\r
 </p>\r
 `},{category:"windows",id:33,content:`<h3>1. When Specific Rows Are Actually Hidden</h3>\r
 <p>\r
@@ -1413,4 +1681,4 @@ namespace MyTestApp.ViewModels\r
   &nbsp;After modifying and saving the View file, press any key to enter text in the TextBox, and you will see that it\r
   immediately hits the breakpoints set in the change callbacks.\r
 </p>\r
-`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],F=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:".NET, C#, Json.NET, jsonpath, LINQ, SelectToken, SelectTokens",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, C# 7.0, SWAP, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"C#, Callback, MethodCallTarget, nlog, nlog message hook",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, could not find a part of the path, publish error, Visual Studio, windows long filename",category:"csharp",timestamp:"2025-01-25T18:52:43.567Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"C#, HAMCSHA256, hashing, SHA256, \uBE44\uBC00\uBC88\uD638 \uC554\uD638\uD654, \uC554\uD638\uD654",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"C#, C# \uB178\uD2B8\uBD81\uB9CC\uB4E4\uAE30, C#\uC744 \uC8FC\uD53C\uD130 \uB178\uD2B8\uBD81\uC5D0\uC11C, dotnet-interactive, Jupyter Notebook, jupyter\uB178\uD2B8\uBD81, Microsoft.dotnet-interactive, \uC8FC\uD53C\uD130\uB178\uD2B8\uBD81",category:"csharp",timestamp:"2025-01-25T19:00:45.693Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".net6, C#, C# lambda expression, C# \uB78C\uB2E4\uC2DD, C# \uB78C\uB2E4\uD45C\uD604\uC2DD, c#10, lambda, Lambda Expression, \uB78C\uB2E4\uC2DD, \uB78C\uB2E4\uD45C\uD604\uC2DD",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"C#, JSON, Json.NET, Serialization, XML, XMLtoJSON",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:".NET, Installer GUI, WixSharp, WixToolset, wpf",category:"csharp",timestamp:"2025-01-25T19:20:46.464Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:".net6, Boilerplate, CommunityToolkit.Mvvm, DependencyInjection, INotifyPropertyChanged, mvvm, MVVM Boilerplate, ObservableObject, ViewModel View\uC5D0 \uBC14\uC778\uB529, wpf",category:"wpf",timestamp:"2025-01-29T13:48:47.803Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:".net6, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, wpf, \uB2F7\uB1376",category:"wpf",timestamp:"2025-01-29T14:21:12.869Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:".net8, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, propertychanged #changeeventcallbacks, wpf",category:"wpf",timestamp:"2025-01-29T16:22:25.138Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"C#, CommunityToolkit, mvvm, WeakReferenceMessenge, wpf",category:"wpf",timestamp:"2025-01-29T16:23:48.988Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"nextjs, PlanetScale, Prisma, pscale, reactjs, SCOOP, serverless, ServerlessDB, ServerlessFunctions",category:"jsts",timestamp:"2025-01-31T12:08:02.943Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"angular, customurlserializer, defaulturlserializer, gihub, google serach console, redirect issue, SEO, SPA",category:"jsts",timestamp:"2025-01-31T18:02:37.117Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-02T02:15:05.812Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"Excel, hidden rows, unhide, hidden rows, rowheight, rowfilter, rowfilters",category:"windows",timestamp:"2025-02-02T13:35:57.550Z"}];var T="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",M=(n=>(n[n.format=0]="format",n[n.string2Json=1]="string2Json",n[n.json2String=2]="json2String",n[n.json2CSharp=3]="json2CSharp",n[n.base64Encode=4]="base64Encode",n[n.base64Decode=5]="base64Decode",n))(M||{}),i=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],g={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],s=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],v={label:"Home",icon:"pi pi-home",routerLink:"/"};var x=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=m(d({},v),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...i]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...s]}];let e=[...F].reverse(),t=k.map(r=>m(d({},r),{count:e.filter(n=>n.category===r.category).length}));this.flatList.push(g),this.flatList.push(...e,...i,...l,...s,...t,...c);let a={label:"Trading",items:[...c]};this.items.push(a);let o={label:"Blog",items:[g,...t]};this.items.push(o),this.flatList.forEach(r=>r.command=n=>this.navigateTo(n)),this.games=[...i],this.tools=[...l,...s.filter(r=>r.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[s.find(r=>r.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let t=y.stripTrailingSlash(this.router.url).split("?")[0];if(t=t===""?"/":t,e.item.routerLink!==t){this.isLoadingPage=!0;let a=e.item;this.router.navigateByUrl(a.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let t=[];if(e){let a=this.flatList.filter(r=>!r.count&&r.category===e.category),o=a.indexOf(e);[-2,-1,1,2].forEach(r=>{let n=o+r;n>=0&&n<a.length&&t.push(a[n])})}return t}getMenuByUrl(e){return this.flatList.find(t=>t.routerLink===e)}getBlogContentByUrl(e){let t=e.split("/"),a=t.at(-2)??"",o=t.at(-1)??"";return h.find(r=>r.category===a&&r.id===+o)}getBlogContent(e,t){return h.find(a=>a.category===e&&a.id===t)}static \u0275fac=function(t){return new(t||p)(f(w))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{h as a,k as b,F as c,T as d,M as e,x as f};
+`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],F=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:".NET, C#, Json.NET, jsonpath, LINQ, SelectToken, SelectTokens",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, C# 7.0, SWAP, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"C#, Callback, MethodCallTarget, nlog, nlog message hook",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, could not find a part of the path, publish error, Visual Studio, windows long filename",category:"csharp",timestamp:"2025-01-25T18:52:43.567Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"C#, HAMCSHA256, hashing, SHA256, \uBE44\uBC00\uBC88\uD638 \uC554\uD638\uD654, \uC554\uD638\uD654",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"C#, C# \uB178\uD2B8\uBD81\uB9CC\uB4E4\uAE30, C#\uC744 \uC8FC\uD53C\uD130 \uB178\uD2B8\uBD81\uC5D0\uC11C, dotnet-interactive, Jupyter Notebook, jupyter\uB178\uD2B8\uBD81, Microsoft.dotnet-interactive, \uC8FC\uD53C\uD130\uB178\uD2B8\uBD81",category:"csharp",timestamp:"2025-01-25T19:00:45.693Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".net6, C#, C# lambda expression, C# \uB78C\uB2E4\uC2DD, C# \uB78C\uB2E4\uD45C\uD604\uC2DD, c#10, lambda, Lambda Expression, \uB78C\uB2E4\uC2DD, \uB78C\uB2E4\uD45C\uD604\uC2DD",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"C#, JSON, Json.NET, Serialization, XML, XMLtoJSON",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:".NET, Installer GUI, WixSharp, WixToolset, wpf",category:"csharp",timestamp:"2025-01-25T19:20:46.464Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:".net6, Boilerplate, CommunityToolkit.Mvvm, DependencyInjection, INotifyPropertyChanged, mvvm, MVVM Boilerplate, ObservableObject, ViewModel View\uC5D0 \uBC14\uC778\uB529, wpf",category:"wpf",timestamp:"2025-01-29T13:48:47.803Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:".net6, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, wpf, \uB2F7\uB1376",category:"wpf",timestamp:"2025-01-29T14:21:12.869Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:".net8, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, propertychanged #changeeventcallbacks, wpf",category:"wpf",timestamp:"2025-01-29T16:22:25.138Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"C#, CommunityToolkit, mvvm, WeakReferenceMessenge, wpf",category:"wpf",timestamp:"2025-01-29T16:23:48.988Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"nextjs, PlanetScale, Prisma, pscale, reactjs, SCOOP, serverless, ServerlessDB, ServerlessFunctions",category:"jsts",timestamp:"2025-01-31T12:08:02.943Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"angular, customurlserializer, defaulturlserializer, gihub, google serach console, redirect issue, SEO, SPA",category:"jsts",timestamp:"2025-01-31T18:02:37.117Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"array, destructing assignment, javascript, SWAP, typescript, \uAD6C\uC870\uBD84\uD574\uD560\uB2F9, \uBC30\uC5F4, \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8, \uD0C0\uC785\uC2A4\uD06C\uB9BD\uD2B8",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"double exclamation operator, falsy, javascript, truthy, \uC774\uC911 \uB290\uB08C\uD45C \uC5F0\uC0B0\uC790",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"array, indexing, javascript, last array element, POP, slice, \uB9C8\uC9C0\uB9C9\uC694\uC18C, \uBC30\uC5F4",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"remove unused import, Shortcut, vscode, \uC0AC\uC6A9\uB418\uC9C0 \uC54A\uB294 import \uC815\uB9AC",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-02T02:15:05.812Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"Excel, hidden rows, unhide, hidden rows, rowheight, rowfilter, rowfilters",category:"windows",timestamp:"2025-02-02T13:35:57.550Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"ftp, IIS, WINDOWS10, \uBB34\uB8CCFTP\uC11C\uBC84, \uC708\uB3C4\uC6B0 10 \uB0B4\uC7A5 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B0 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B010FTP",category:"windows",timestamp:"2025-02-03T11:51:57.405Z"}];var S="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",M=(n=>(n[n.format=0]="format",n[n.string2Json=1]="string2Json",n[n.json2String=2]="json2String",n[n.json2CSharp=3]="json2CSharp",n[n.base64Encode=4]="base64Encode",n[n.base64Decode=5]="base64Decode",n))(M||{}),i=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],g={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],s=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],x={label:"Home",icon:"pi pi-home",routerLink:"/"};var v=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=m(d({},x),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...i]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...s]}];let e=[...F].reverse(),t=k.map(r=>m(d({},r),{count:e.filter(n=>n.category===r.category).length}));this.flatList.push(g),this.flatList.push(...e,...i,...l,...s,...t,...c);let a={label:"Trading",items:[...c]};this.items.push(a);let o={label:"Blog",items:[g,...t]};this.items.push(o),this.flatList.forEach(r=>r.command=n=>this.navigateTo(n)),this.games=[...i],this.tools=[...l,...s.filter(r=>r.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[s.find(r=>r.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let t=y.stripTrailingSlash(this.router.url).split("?")[0];if(t=t===""?"/":t,e.item.routerLink!==t){this.isLoadingPage=!0;let a=e.item;this.router.navigateByUrl(a.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let t=[];if(e){let a=this.flatList.filter(r=>!r.count&&r.category===e.category),o=a.indexOf(e);[-2,-1,1,2].forEach(r=>{let n=o+r;n>=0&&n<a.length&&t.push(a[n])})}return t}getMenuByUrl(e){return this.flatList.find(t=>t.routerLink===e)}getBlogContentByUrl(e){let t=e.split("/"),a=t.at(-2)??"",o=t.at(-1)??"";return h.find(r=>r.category===a&&r.id===+o)}getBlogContent(e,t){return h.find(a=>a.category===e&&a.id===t)}static \u0275fac=function(t){return new(t||p)(f(w))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{h as a,k as b,F as c,S as d,M as e,v as f};
