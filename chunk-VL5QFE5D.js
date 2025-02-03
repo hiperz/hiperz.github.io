@@ -1,1 +1,0 @@
-import{ib as i}from"./chunk-VECOZZOS.js";var n=class e{transform(r,t="en-US"){return r==null?"":new Intl.NumberFormat(t,{minimumFractionDigits:0}).format(Number(r))}static \u0275fac=function(t){return new(t||e)};static \u0275pipe=i({name:"numberFormat",type:e,pure:!0})};export{n as a};

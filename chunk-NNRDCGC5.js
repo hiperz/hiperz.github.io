@@ -1,0 +1,1 @@
+import{hb as e}from"./chunk-J6VIUCVX.js";var n=class i{transform(r,t=20){return typeof r!="string"?r:r.length>t?r.substring(0,t)+"...":r}static \u0275fac=function(t){return new(t||i)};static \u0275pipe=e({name:"appCutText",type:i,pure:!0})};export{n as a};
