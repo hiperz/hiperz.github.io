@@ -1,16 +1,16 @@
-import{n as y}from"./chunk-VYEGLGHD.js";import{Hc as f,X as b,a as d,aa as w,b as h,p as u}from"./chunk-KZVD5HA2.js";var m=[{category:"csharp",id:23,content:`<article class="prose max-w-none">\r
-    <h2>Table of Contents</h2>\r
-    <ul>\r
-        <li><a href="/#json-enum-string">Serializing Enums as Strings in JSON</a></li>\r
-        <li><a href="#json-enum-list">Serializing Enum Lists in JSON</a></li>\r
-    </ul>\r
+import{n as y}from"./chunk-VYEGLGHD.js";import{Hc as w,X as b,a as d,aa as f,b as h,p as u}from"./chunk-KZVD5HA2.js";var g=[{category:"csharp",id:23,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+  <li><a href="/#json-enum-string">Serializing Enums as Strings in JSON</a></li>\r
+  <li><a href="#json-enum-list">Serializing Enum Lists in JSON</a></li>\r
+</ul>\r
 \r
-    <h2 id="json-enum-string">Serializing Enums as Strings in JSON</h2>\r
-    <p>\r
-        When serializing JSON, data is typically stored as a text file or in a database. However, enum values are often stored as numbers, which reduces readability when inspecting JSON strings.\r
-        To improve readability, it's common to store enum values as strings. This can be achieved by applying a specific attribute to the enum variable, as shown below:\r
-    </p>\r
-    <pre class="csharp language-csharp"><code>\r
+<h2 id="json-enum-string">Serializing Enums as Strings in JSON</h2>\r
+<p>\r
+  When serializing JSON, data is typically stored as a text file or in a database. However, enum values are often stored\r
+  as numbers, which reduces readability when inspecting JSON strings. To improve readability, it's common to store enum\r
+  values as strings. This can be achieved by applying a specific attribute to the enum variable, as shown below:\r
+</p>\r
+<pre class="csharp language-csharp"><code>\r
 using Newtonsoft.Json;\r
 using Newtonsoft.Json.Converters;\r
 \r
@@ -25,12 +25,13 @@ public class Company\r
     public CompanyType CompanyType { get; set; }\r
 }</code>\r
 </pre>\r
-<br>\r
-    <h2 id="json-enum-list">Serializing Enum Lists in JSON</h2>\r
-    <p>\r
-        If the member variable is an array or list, you can specify the attribute differently, as demonstrated in the following example:\r
-    </p>\r
-    <pre class="csharp language-csharp"><code>\r
+<br />\r
+<h2 id="json-enum-list">Serializing Enum Lists in JSON</h2>\r
+<p>\r
+  If the member variable is an array or list, you can specify the attribute differently, as demonstrated in the\r
+  following example:\r
+</p>\r
+<pre class="csharp language-csharp"><code>\r
 using Newtonsoft.Json;\r
 using Newtonsoft.Json.Converters;\r
 \r
@@ -48,40 +49,33 @@ public class Company\r
     public List&lt;CompanyType&gt; CompanyTypes { get; set; }\r
 }</code>\r
 </pre>\r
-</article>\r
-`},{category:"csharp",id:24,content:`<meta\r
-  name="keywords"\r
-  content="C#, JSON, JObject, SelectToken, SelectTokens, JSONPath, LINQ, Newtonsoft.Json, JSON Parsing, JSON Manipulation"\r
-/>\r
+`},{category:"csharp",id:24,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+  <li><a href="#json-parsing">Parsing JSON with JObject</a></li>\r
+  <li><a href="#selecttoken">Using SelectToken</a></li>\r
+  <li><a href="#jsonpath">Using JSONPath with SelectToken</a></li>\r
+  <li><a href="#linq">Using SelectToken with LINQ</a></li>\r
+</ul>\r
+<h2 id="json-parsing">Parsing JSON with JObject</h2>\r
+<p>\r
+  When working with variable JSON structures in C#, or when you need to extract or modify specific data, it is often\r
+  more efficient to use <code>JObject</code> along with the <code>SelectToken</code> and <code>SelectTokens</code>\r
+  methods. These methods allow you to retrieve or manipulate specific JSON values without needing to define full-fledged\r
+  C# classes for mapping.\r
+</p>\r
+<p>\r
+  Original reference:\r
+  <a href="https://www.newtonsoft.com/json/help/html/SelectToken.htm">Newtonsoft JSON SelectToken Documentation</a>\r
+</p>\r
+<br />\r
 \r
-<article class="prose max-w-none">\r
-  <h2>Table of Contents</h2>\r
-  <ul>\r
-    <li><a href="#json-parsing">Parsing JSON with JObject</a></li>\r
-    <li><a href="#selecttoken">Using SelectToken</a></li>\r
-    <li><a href="#jsonpath">Using JSONPath with SelectToken</a></li>\r
-    <li><a href="#linq">Using SelectToken with LINQ</a></li>\r
-  </ul>\r
-  <h2 id="json-parsing">Parsing JSON with JObject</h2>\r
-  <p>\r
-    When working with variable JSON structures in C#, or when you need to extract or modify specific data, it is often\r
-    more efficient to use <code>JObject</code> along with the <code>SelectToken</code> and <code>SelectTokens</code>\r
-    methods. These methods allow you to retrieve or manipulate specific JSON values without needing to define\r
-    full-fledged C# classes for mapping.\r
-  </p>\r
-  <p>\r
-    Original reference:\r
-    <a href="https://www.newtonsoft.com/json/help/html/SelectToken.htm">Newtonsoft JSON SelectToken Documentation</a>\r
-  </p>\r
-  <br />\r
-\r
-  <h2 id="selecttoken">Using SelectToken</h2>\r
-  <p>\r
-    The <code>SelectToken</code> method returns a <code>JToken</code> using a string path to access child tokens. If the\r
-    specified token is found, it returns the token; otherwise, it returns <code>null</code>. The path uses dot notation\r
-    for properties and array indexes. For example: <code>Manufacturers[0].Name</code>.\r
-  </p>\r
-  <pre class="csharp language-csharp"><code>\r
+<h2 id="selecttoken">Using SelectToken</h2>\r
+<p>\r
+  The <code>SelectToken</code> method returns a <code>JToken</code> using a string path to access child tokens. If the\r
+  specified token is found, it returns the token; otherwise, it returns <code>null</code>. The path uses dot notation\r
+  for properties and array indexes. For example: <code>Manufacturers[0].Name</code>.\r
+</p>\r
+<pre class="csharp language-csharp"><code>\r
 JObject o = JObject.Parse(@"{\r
   'Stores': [\r
       'Lambton Quay',\r
@@ -122,13 +116,13 @@ decimal productPrice = (decimal)o.SelectToken("Manufacturers[0].Products[0].Pric
 string productName = (string)o.SelectToken("Manufacturers[1].Products[0].Name");\r
 // Elbow Grease</code>\r
 </pre>\r
-<br>\r
-  <h2 id="jsonpath">Using JSONPath with SelectToken</h2>\r
-  <p>\r
-    You can leverage <a href="https://goessner.net/articles/JsonPath/" target="_blank" rel="noopener">JSONPath</a>\r
-    expressions to query tokens dynamically.\r
-  </p>\r
-  <pre class="csharp language-csharp"><code>\r
+<br />\r
+<h2 id="jsonpath">Using JSONPath with SelectToken</h2>\r
+<p>\r
+  You can leverage <a href="https://goessner.net/articles/JsonPath/" target="_blank" rel="noopener">JSONPath</a>\r
+  expressions to query tokens dynamically.\r
+</p>\r
+<pre class="csharp language-csharp"><code>\r
 JToken acme = o.SelectToken("$.Manufacturers[?(@.Name == 'Acme Co')]");\r
 Console.WriteLine(acme);\r
 // { "Name": "Acme Co", Products: [{ "Name": "Anvil", "Price": 50 }] }\r
@@ -142,10 +136,10 @@ foreach (JToken item in pricyProducts)\r
 // Anvil\r
 // Elbow Grease</code>\r
 </pre>\r
-<br>\r
-  <h2 id="linq">Using SelectToken with LINQ</h2>\r
-  <p>The <code>SelectToken</code> method can be combined with LINQ to filter and retrieve JSON data efficiently.</p>\r
-  <pre class="csharp language-csharp"><code>\r
+<br />\r
+<h2 id="linq">Using SelectToken with LINQ</h2>\r
+<p>The <code>SelectToken</code> method can be combined with LINQ to filter and retrieve JSON data efficiently.</p>\r
+<pre class="csharp language-csharp"><code>\r
 IList&lt;string&gt; storeNames = o.SelectToken("Stores").Select(s =&gt; (string)s).ToList();\r
 // Lambton Quay\r
 // Willis Street\r
@@ -157,10 +151,7 @@ IList&lt;string&gt; firstProductNames = o["Manufacturers"].Select(m =&gt; (strin
 decimal totalPrice = o["Manufacturers"].Sum(m =&gt; (decimal)m.SelectToken("Products[0].Price"));\r
 // 149.95</code>\r
 </pre>\r
-</article>\r
-`},{category:"csharp",id:32,content:`<meta name="keywords" content="C#, variable swap, Classic Method, Modern Method, tuple" />\r
-\r
-<h2>1. Classic Method</h2>\r
+`},{category:"csharp",id:32,content:`<h2>1. Classic Method</h2>\r
 <p>\r
   &nbsp;Declare an additional temporary variable, copy the value or reference of one of the two variables into it, and\r
   then perform the swap.\r
@@ -175,9 +166,7 @@ b = temp;</code>\r
 <p>&nbsp;Using a tuple, you can achieve the swap in a single line.</p>\r
 <pre class="csharp" data-ke-language="csharp" data-ke-type="codeblock"><code>(b, a) = (a, b)</code>\r
     </pre>\r
-`},{category:"csharp",id:34,content:`<meta name="keywords" content="NLog, logging, MethodCallTarget, GRPC, WebSocket, Kafka" />\r
-\r
-<h2>Table of Contents</h2>\r
+`},{category:"csharp",id:34,content:`<h2>Table of Contents</h2>\r
 <ul>\r
   <li><a href="#introduction">Introduction</a></li>\r
   <li><a href="#implementation">Implementation with MethodCallTarget</a></li>\r
@@ -262,9 +251,7 @@ public class Example\r
     >NLog MethodCallTarget Documentation</a\r
   >.\r
 </p>\r
-`},{category:"csharp",id:38,content:`<html><head><meta name="keywords" content="file path, Windows Registry, LongPathsEnabled">
-
-</head><body><p>
+`},{category:"csharp",id:38,content:`<p>
   The main cause is that the file path is too long. Therefore, you can reduce the length of the path name by shortening
   the project folder name and placing it in a higher-level folder. However, if you inevitably need to place it in a
   folder with a long name and deep level, there is a way to change the Windows Registry.
@@ -276,9 +263,7 @@ public class Example\r
 <pre class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>Computer\\HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem</code></pre>
 <p>Set LongPathsEnabled to 1 to solve the problem.</p>
 <p>If the property does not exist, create a new DWORD type and set the value to 1. (No reboot required)</p>
-</body></html>`},{category:"csharp",id:40,content:`<meta name="keywords" content="HMACSHA256, C#, password encryption, hashing, credential helper">\r
-\r
-<h2>Table of Contents</h2>\r
+`},{category:"csharp",id:40,content:`<h2>Table of Contents</h2>\r
 <ul>\r
     <li><a href="#introduction">Introduction</a></li>\r
     <li><a href="#code-example">Code Example</a></li>\r
@@ -302,9 +287,7 @@ public class Example\r
 </pre>\r
 <h3 id="usage">Usage</h3>\r
 <p>As shown above, you can create a static class and use the function to generate a hash string from the username and password entered by the user. You can then store this hash string and compare it with the hash generated from the username/password combination entered by the user during login to verify.</p>\r
-`},{category:"csharp",id:45,content:`<html><head><meta name="keywords" content="Python, Jupyter Notebook, C#, Anaconda, Miniconda, .Net, development environment">
-
-</head><body><h2>Table of Contents</h2>
+`},{category:"csharp",id:45,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#installation">Installation</a></li>
@@ -343,15 +326,7 @@ public class Example\r
 <p>
     <img src="./assets/images/articles/csharp/45/bur6GT_btr0Iv7UyE1_1iPw8NWGSFBcHy1G9EKFPk_img.png" alt="">
 </p>
-</body></html>Fbtr0Iv7UyE1%2F1iPw8NWGSFBcHy1G9EKFPk%2Fimg.png" alt="">
-</p>
-</body></html>Fbtr0Iv7UyE1%2F1iPw8NWGSFBcHy1G9EKFPk%2Fimg.png" alt="">
-</p>
-</body></html>Fbtr0Iv7UyE1%2F1iPw8NWGSFBcHy1G9EKFPk%2Fimg.png" alt="">
-</p>
-</body></html>`},{category:"csharp",id:47,content:`<meta name="keywords" content=".NET 6, C# 10, lambda expressions, compiler, attributes">\r
-\r
-<h2>Table of Contents</h2>\r
+`},{category:"csharp",id:47,content:`<h2>Table of Contents</h2>\r
 <ul>\r
     <li><a href="#introduction">Introduction</a></li>\r
     <li><a href="#natural-type">Natural Type of a Lambda Expression</a></li>\r
@@ -381,9 +356,7 @@ public class Example\r
 <p>&nbsp;You can also specify attributes for each parameter or for the return value as shown below:&nbsp;</p>\r
 <pre id="code_1677809202818" class="sql" data-ke-language="sql" data-ke-type="codeblock"><code>var concat = ([DisallowNull] string a, [DisallowNull] string b) =&gt; a + b;\r
 var inc = [return: NotNullifNotNull(nameof(s))] (int? s) =&gt; s.HasValue ? s++ : null;</code></pre>\r
-<br>`},{category:"csharp",id:53,content:`<meta name="keywords" content="JSON, XML, serialization, Json.NET, data exchange, structured data">\r
-\r
-<h2>Table of Contents</h2>\r
+<br>`},{category:"csharp",id:53,content:`<h2>Table of Contents</h2>\r
 <ul>\r
     <li><a href="#introduction">Introduction</a></li>\r
     <li><a href="#serialization">Serialization</a></li>\r
@@ -432,9 +405,7 @@ Console.WriteLine(json);\r
 //   }\r
 // }</code></pre>\r
 <p>Original text: <a href="https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm" target="_blank" rel="noopener">https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm</a></p>\r
-<br>`},{category:"csharp",id:78,content:`<html><head><meta name="keywords" content="WixSharp, Wix toolset, Windows Desktop applications, installation file, Visual Studio, project template, NuGet packages, WPF view, C#, tutorial">
-
-</head><body><h2>Table of Contents</h2>
+<br>`},{category:"csharp",id:78,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">1. Introduction to WixSharp</a></li>
     <li><a href="#section2">2. Installing WixSharp VS Extension</a></li>
@@ -460,8 +431,8 @@ Console.WriteLine(json);\r
 <p>Name the project MyAppInstaller.</p>
 <p><img class="w-[600px]" src="./assets/images/articles/csharp/78/cV1L1T_btsq2h1UOtT_DiWprQFm6Jc5BBDkojMdak_img.png" alt=""></p>
 <p>Since the template references older versions of NuGet packages, update them to the latest versions.</p>
-<p><img class="w-[700px]" src="./assets/images/articles/csharp/78/dMInkm_btsq1ctgLCE_SthjrGu37RcoqSrZQhwRT1_img.png" alt=""></p>
-<p><img class="w-[900px]" src="./assets/images/articles/csharp/78/R2v8F_btsqYZB0y9e_V8gNF8clKvREYq7cA92q1k_img.png" alt="">
+<p><img class="w-[300px]" src="./assets/images/articles/csharp/78/dMInkm_btsq1ctgLCE_SthjrGu37RcoqSrZQhwRT1_img.png" alt=""></p>
+<p><img class="w-[800px]" src="./assets/images/articles/csharp/78/R2v8F_btsqYZB0y9e_V8gNF8clKvREYq7cA92q1k_img.png" alt="">
 <br>
 </p><h2 id="section4"><b>4. Building the Target Project and Installer Project</b></h2>
 <p>&nbsp;Modify the Program.cs file of the MyAppInstaller project as follows.</p>
@@ -538,21 +509,8 @@ Console.WriteLine(json);\r
     <img class="border" src="./assets/images/articles/csharp/78/dCfM0i_btsqZbB4fYi_kf5PeDtwjdD7qShdtk6R4k_img.png" alt="">
 </p>
 <p>In the next post, we will learn how to filter the target files for deployment and create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>d create
-    shortcut icons on the desktop and start menu.</p></body></html>`},{category:"jsts",id:31,content:`<meta name="keywords" content="Variable Swapping, JavaScript, Traditional Method, Modern Method">\r
-\r
-<h2>Table of Contents</h2>\r
+    shortcut icons on the desktop and start menu.</p>
+`},{category:"jsts",id:31,content:`<h2>Table of Contents</h2>\r
 <ul>\r
   <li><a href="#traditional-method">1. Traditional Method</a></li>\r
   <li><a href="#modern-method">2. Modern Method</a></li>\r
@@ -571,9 +529,7 @@ b = temp;\r
 <p>By using arrays and destructuring assignment, swapping can be done in a single line.</p>\r
 <pre><code>[b, a] = [a, b];\r
 </code></pre><br>\r
-`},{category:"jsts",id:39,content:`<meta name="keywords" content="JavaScript, Double Exclamation Mark, Boolean Conversion">\r
-\r
-<h2>Table of Contents</h2>\r
+`},{category:"jsts",id:39,content:`<h2>Table of Contents</h2>\r
 <ul>\r
   <li><a href="#traditional-method">1. Traditional Method</a></li>\r
   <li><a href="#modern-method">2. Modern Method</a></li>\r
@@ -611,9 +567,7 @@ const is_c_truthy = !!c; // false\r
 const d = "0";\r
 const is_d_truthy = !!d; // true\r
 </code></pre><br>\r
-`},{category:"jsts",id:55,content:`<meta name="keywords" content="JavaScript, Array Methods, Performance Comparison, Access Last Element, Slice Method, Pop Method">\r
-\r
-<h1>JavaScript Array Methods for Accessing the Last Element</h1>\r
+`},{category:"jsts",id:55,content:`<h1>JavaScript Array Methods for Accessing the Last Element</h1>\r
 <h2>Table of Contents</h2>\r
 <ul>\r
   <li><a href="#length-method">1. Access Last Element Using Array Length</a></li>\r
@@ -671,9 +625,7 @@ console.timeEnd('pop');\r
 </code></pre>\r
 <p><strong>Result:</strong> The <code>pop()</code> method performs the fastest.</p>\r
 <p>Although using <code>arr.length - 1</code> is common, the performance difference suggests that using <code>pop()</code> is the better choice.</p><br>\r
-`},{category:"jsts",id:58,content:`<meta name="keywords" content="JavaScript, TypeScript, VSCode, Unused Imports, Shortcuts">\r
-\r
-<h2>Table of Contents</h2>\r
+`},{category:"jsts",id:58,content:`<h2>Table of Contents</h2>\r
 <ul>\r
   <li><a href="#removing-unused-imports">Automatically Removing Unused Imports in VSCode</a></li>\r
   <li><a href="#example">Example</a></li>\r
@@ -691,9 +643,7 @@ console.timeEnd('pop');\r
 <p><strong>VSCode Default Shortcut (Windows)</strong></p>\r
 <p><code>Alt + Shift + O</code></p>\r
 <p>Pressing this shortcut will make VSCode automatically remove the unused import.</p><br>\r
-`},{category:"jsts",id:6,content:`<html><head><meta name="keywords" content="PlanetScale, NextJS, Prisma, Installation Guide, Database Connection">
-
-</head><body><h2>Table of Contents</h2>
+`},{category:"jsts",id:6,content:`<h2>Table of Contents</h2>
 <ul>
   <li><a href="#account-creation">PlanetScale Account Creation</a></li>
   <li><a href="#cli-installation">PlanetScale CLI Installation</a></li>
@@ -769,9 +719,8 @@ model Test {
 <p>Click on Tables on the screen above to check the created table schema.</p>
 <img class="border w-[500px]" src="./assets/images/articles/jsts/6/DdYcG_btrUBa9Edku_WpJNS8tcr9yuJ612fygP31_img.png" alt="Table schema">
 <p>Once you have completed the above steps, you can now read and write to the DB created in PlanetScale from NextJS.</p>
-<br></body></html>`},{category:"jsts",id:92,content:`<html><head><meta name="keywords" content="SEO, Angular, GitHub, Redirection Error, Lighthouse, Custom URL Serializer">
-
-</head><body><h2>Table of Contents</h2>
+<br>
+`},{category:"jsts",id:92,content:`<h2>Table of Contents</h2>
 <ul>
   <li><a href="#seo-issues">SEO Issues with Angular and GitHub Hosting</a></li>
   <li><a href="#solution">Solution (Based on Angular 19)</a></li>
@@ -830,7 +779,7 @@ export class CustomUrlSerializer extends DefaultUrlSerializer {
 }</code></pre>
 <p class="my-2">
   [Code Source]:
-  <a href="https://github.com/angular/angular/issues/16051#issuecomment-575346573" target="_blank" rel="noopener&nbsp;noreferrer">https://github.com/angular/angular/issues/16051#issuecomment-575346573</a>
+  <a href="https://github.com/angular/angular/issues/16051#issuecomment-575346573" target="_blank" rel="noopener">https://github.com/angular/angular/issues/16051#issuecomment-575346573</a>
 </p><br>
 
 <h3 class="mt-3">2. Modify app.config.ts</h3>
@@ -863,12 +812,7 @@ export class BlaBlaComponent implements OnInit {
 <p class="my-2">
   &nbsp;I hope this helps those who are hosting web apps with Angular SPA on Github and experiencing redirection issues.
 </p><br>
-</body></html>lar SPA on Github and experiencing redirection issues.
-</p><br>
-</body></html>lar SPA on Github and experiencing redirection issues.
-</p><br>
-</body></html>`},{category:"windows",id:18,content:`<html><head><meta name="keywords" content="IIS Management Console, FTP Service, FTP Site, Firewall Configuration, FTP User Account, FTP Folder Permissions, FTP Connection Test">
-</head><body><h2>Table of Contents</h2>
+`},{category:"windows",id:18,content:`<h2>Table of Contents</h2>
 <ul>
   <li><a href="#section1">Installing IIS Management Console and FTP Service</a></li>
   <li><a href="#section2">Creating a New FTP Site</a></li>
@@ -881,22 +825,22 @@ export class BlaBlaComponent implements OnInit {
 <p>Go to the Control Panel, navigate to "Apps &amp; Features," and click "Programs and Features."</p>
 <p><img class="w-[800px] border" src="./assets/images/articles/windows/18/xQs9N_btrWv64Scf4_GhVklb64oThHxQBXgatoe0_img.png" alt=""></p>
 <p>Click "Turn Windows features on or off."</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/ck5l49_btrWuO4rOvp_rZw8bK31xqBaV0QHnfck00_img.png" alt=""></p>
+<p><img class="w-[250px] border" src="./assets/images/articles/windows/18/ck5l49_btrWuO4rOvp_rZw8bK31xqBaV0QHnfck00_img.png" alt=""></p>
 <p>Select "FTP Service" and "IIS Management Console" and install them.</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/EU0wl_btrWuOwD8tt_uynnFPhKLoiShPx15enH10_img.png" alt=""></p>
+<p><img class="w-[300px] border" src="./assets/images/articles/windows/18/EU0wl_btrWuOwD8tt_uynnFPhKLoiShPx15enH10_img.png" alt=""></p>
 <br>
 
 <h2 id="section2">2. Creating a New FTP Site</h2>
 <p>Open the IIS Manager app.</p>
 <p><img class="w-[800px] border" src="./assets/images/articles/windows/18/dNrFgj_btrWxrGWStA_kpZtHRKNbwFgxthcR3rx8K_img.png" alt=""></p>
 <p>Right-click "Sites" and select "Add FTP Site..."</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/cg0vdq_btrWyLrnGtY_rkPhWhH0iO6YnKvRqGLX7K_img.png" alt=""></p>
+<p><img class="w-[500px] border" src="./assets/images/articles/windows/18/cg0vdq_btrWyLrnGtY_rkPhWhH0iO6YnKvRqGLX7K_img.png" alt=""></p>
 <p>Set an FTP site name and specify the directory path for the FTP server.</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/tDACM_btrWwH4yMc6_wKlvikoZrF2UuVK6iN9UYK_img.png" alt=""></p>
+<p><img class="w-[500px] border" src="./assets/images/articles/windows/18/tDACM_btrWwH4yMc6_wKlvikoZrF2UuVK6iN9UYK_img.png" alt=""></p>
 <p>Select "No SSL."</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/MjyMr_btrWw8ARGux_HKQqVm1rLiNBK1KANU1Lq1_img.png" alt=""></p>
+<p><img class="w-[500px] border" src="./assets/images/articles/windows/18/MjyMr_btrWw8ARGux_HKQqVm1rLiNBK1KANU1Lq1_img.png" alt=""></p>
 <p>Check "Basic Authentication," allow access to a specific user account (e.g., ftptest), enable read/write permissions, and click "Finish."</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/bAt1Wr_btrWwpC6yRY_MMrKLqQxjkTmBpg9CVZupK_img.png" alt=""></p>
+<p><img class="w-[500px] border" src="./assets/images/articles/windows/18/bAt1Wr_btrWwpC6yRY_MMrKLqQxjkTmBpg9CVZupK_img.png" alt=""></p>
 <br>
 
 <h2 id="section3">3. Configuring the Firewall</h2>
@@ -907,26 +851,27 @@ export class BlaBlaComponent implements OnInit {
 <br>
 
 <h2 id="section4">4. Adding a User Account for FTP Access</h2>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/AC7OT_btrWx6P7QI7_5GS1qSq2EAOwaJ7A9ak3d0_img.png" alt=""></p>
+<p><img class="w-[50px] border" src="./assets/images/articles/windows/18/AC7OT_btrWx6P7QI7_5GS1qSq2EAOwaJ7A9ak3d0_img.png" alt=""></p>
 <p>Right-click the Windows Start button and select "Computer Management."</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/cFqO2A_btrWxqH4jfT_nH7vwcXQDAkZk8bDu0Opx0_img.png" alt=""></p>
+<p><img class="w-[300px] border" src="./assets/images/articles/windows/18/cFqO2A_btrWxqH4jfT_nH7vwcXQDAkZk8bDu0Opx0_img.png" alt=""></p>
 <p>Right-click "Users" and select "New User..." to create a new user account.</p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/viPvr_btrWx72x6Sp_qV6NDQYPOGi3cZqBKJNTKK_img.png" alt=""></p>
-<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/rMreG_btrWw7BZjG8_BQH3qcCekrogMQZXeFAbMk_img.png" alt=""></p>
+<p><img class="w-[300px] border" src="./assets/images/articles/windows/18/viPvr_btrWx72x6Sp_qV6NDQYPOGi3cZqBKJNTKK_img.png" alt=""></p>
+<p><img class="w-[400px] border" src="./assets/images/articles/windows/18/rMreG_btrWw7BZjG8_BQH3qcCekrogMQZXeFAbMk_img.png" alt=""></p>
 <br>
 
 <h2 id="section5">5. Granting User Permissions to the FTP Folder</h2>
 <p>In IIS Manager, right-click the FTP site and select "Edit Permissions."</p>
 <p>Go to the "Security" tab, click "Edit," then "Add" the new user (e.g., ftptest), and grant full control.</p>
-<img class="w-[800px] border" src="./assets/images/articles/windows/18/bdlTHc_btrWteJaGFD_hkJre2RkDhfnKF9lLsXOck_img.png" alt="">
-<img class="w-[800px] border" src="./assets/images/articles/windows/18/cT1fBm_btrWsjjF5zz_Fn4facOf3Oe1vhVk7tj2Y0_img.png" alt="">
+<img class="w-[400px] border" src="./assets/images/articles/windows/18/bdlTHc_btrWteJaGFD_hkJre2RkDhfnKF9lLsXOck_img.png" alt="">
+<img class="w-[400px] border" src="./assets/images/articles/windows/18/cT1fBm_btrWsjjF5zz_Fn4facOf3Oe1vhVk7tj2Y0_img.png" alt="">
+<br>
 
 <h2 id="section6">6. Testing the FTP Connection</h2>
 <p>To verify the setup, use an FTP client like FileZilla or WinSCP.</p>
 <p>Alternatively, open a terminal and run <code>ftp localhost</code>, then enter the user credentials.</p>
 <p>Use the <code>dir</code> command to check directory access.</p>
-<img class="w-[500px] border" src="./assets/images/articles/windows/18/bYVxka_btrWsUKGnwT_NqZNg8VnKU5hEeWElhC9S0_img.png" alt=""></body></html>`},{category:"windows",id:33,content:`<html><head><meta name="keywords" content="unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting">
-</head><body><h2>Table of Contents</h2>
+<img class="w-[500px] border" src="./assets/images/articles/windows/18/bYVxka_btrWsUKGnwT_NqZNg8VnKU5hEeWElhC9S0_img.png" alt="">
+<br>`},{category:"windows",id:33,content:`<h2>Table of Contents</h2>
 <ul>
   <li><a href="#section1">When Specific Rows Are Actually Hidden</a></li>
   <li><a href="#section2">Rows Are Hidden Due to Small Height Settings</a></li>
@@ -954,10 +899,8 @@ export class BlaBlaComponent implements OnInit {
 <p><img src="./assets/images/articles/windows/33/PchWc_btrYqSipslT_tOT7gEBsrPXigLjCVRRLf1_img.png" alt=""></p>
 <p>Use Ctrl + Shift + L shortcut or go to the toolbar menu to clear filters:</p>
 <p><img src="./assets/images/articles/windows/33/bdF0KL_btrYq439KDJ_ynV0aAJqtpVJTlH2wCtLe0_img.png" alt=""></p>
-<br></body></html>_btrYq439KDJ_ynV0aAJqtpVJTlH2wCtLe0_img.png" alt=""></p>
-<br></body></html>`},{category:"windows",id:60,content:`<html><head><meta charset="UTF-8">
-<meta name="keywords" content="unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting">
-</head><body><h2>Table of Contents</h2>
+<br>
+`},{category:"windows",id:60,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">How to Uninstall Office When It's Not Listed in Control Panel</a></li>
 </ul>
@@ -983,10 +926,7 @@ export class BlaBlaComponent implements OnInit {
 <p><img class="w-[700px] border" src="./assets/images/articles/windows/60/LHTUh_btr9NCiQQ7v_fOGNXUn7vk7gE8ZeUfMeA0_img.png" alt=""></p>
 <p>Once the uninstallation is complete, press the Restart button to restart your system and Office will be completely uninstalled.</p>
 <p><img class="w-[700px]" src="./assets/images/articles/windows/60/Iga6g_btr9MdYc2Wo_HSJClK917tnV3SPcO94qOk_img.png" alt=""></p>
-</body></html>ga6g_btr9MdYc2Wo_HSJClK917tnV3SPcO94qOk_img.png" alt=""></p>
-</body></html>`},{category:"wpf",id:35,content:`<html><head><meta name="keywords" content="Visual Studio, WPF project, NuGet Packages, MVVM pattern, Dependency Injection, ViewModel, ViewModel Locator, DataContext binding">
-
-</head><body><h2>Table of Contents</h2>
+`},{category:"wpf",id:35,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">Open Visual Studio and create a new WPF project</a></li>
     <li><a href="#section2">Install NuGet Packages</a></li>
@@ -1125,16 +1065,7 @@ namespace MyTestApp
 &lt;/Window&gt;</code></pre>
 <p>This is the boilerplate code for developing a WPF app using the MVVM pattern. Add new Views to the Views folder and the corresponding ViewModels to the ViewModels folder. Then, declare the ViewModel instance in the VmLocator to be created by the Dependency Injection service and bind it to the View's DataContext in the same way as MainWindowVM.</p>
 <p>&nbsp;</p>
-</body></html>ator to be created by the Dependency Injection service and bind it to the View's DataContext in the same way as MainWindowVM.</p>
-<p>&nbsp;</p>
-</body></html>s DataContext in the same way as MainWindowVM.</p>
-<p>&nbsp;</p>
-</body></html>s DataContext in the same way as MainWindowVM.</p>
-<p>&nbsp;</p>
-</body></html>s DataContext in the same way as MainWindowVM.</p>
-<p>&nbsp;</p>
-</body></html>`},{category:"wpf",id:44,content:`<html><head><meta name="keywords" content="MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WPF, Visual Studio">
-</head><body><h2>Table of Contents</h2>
+`},{category:"wpf",id:44,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">Introduction</a></li>
     <li><a href="#section2">Declare Member Variables in ViewModel</a></li>
@@ -1248,11 +1179,7 @@ namespace MyTestApp.ViewModels
   In the next post, we will learn how to hook events in the ViewModel when the bound value changes due to user input.
 </p>
 <p>&nbsp;</p>
-</body></html>en the bound value changes due to user input.
-</p>
-<p>&nbsp;</p>
-</body></html>`},{category:"wpf",id:52,content:`<html><head><meta name="keywords" content="MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WeakReferenceMessenger, WPF, Visual Studio">
-</head><body><h2>Table of Contents</h2>
+`},{category:"wpf",id:52,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">1. Create Message Class</a></li>
     <li><a href="#section2">2. Register to Receive Messages in the View</a></li>
@@ -1363,11 +1290,7 @@ namespace MyTestApp.ViewModels
     <img class="w-[600px] border" src="./assets/images/articles/wpf/52/2QMz6_btr4tPg6juO_YZY2tvpje02rUvzORnLHs0_img.png" alt="">
 </p>
 <p>&nbsp;</p>
-</body></html>g6juO_YZY2tvpje02rUvzORnLHs0_img.png" alt="">
-</p>
-<p>&nbsp;</p>
-</body></html>`},{category:"wpf",id:90,content:`<html><head><meta name="keywords" content="MVVM pattern, ViewModel, Data Binding, ObservableProperty, Callbacks, WPF, Visual Studio">
-</head><body><h2>Table of Contents</h2>
+`},{category:"wpf",id:90,content:`<h2>Table of Contents</h2>
 <ul>
     <li><a href="#section1">Introduction</a></li>
     <li><a href="#section2">Change Event Callbacks for Bound Variables</a></li>
@@ -1439,19 +1362,17 @@ namespace MyTestApp.ViewModels
   were not called.
 </p>
 <p>
-  <img class="w-[400px]" src="./assets/images/articles/wpf/90/bepZv0_btsLFB7SofO_zaAluxkdBoaNhXjHcOcr40_img.png" alt="">
+  <img class="w-[300px]" src="./assets/images/articles/wpf/90/bepZv0_btsLFB7SofO_zaAluxkdBoaNhXjHcOcr40_img.png" alt="">
 </p>
 <p>
   &nbsp;Since the callback functions of the ViewModel are triggered only by the PropertyChanged event, change the Update
   Trigger mode in the TextBox binding options of the MainWindow View to PropertyChanged as follows.
 </p>
 <p>
-  <img class="w-[700px]" src="./assets/images/articles/wpf/90/cFkMiR_btsLFCMs6JY_LMgVLSid31xMaWyeIOQ5qK_img.png" alt="">
+  <img class="w-[600px]" src="./assets/images/articles/wpf/90/cFkMiR_btsLFCMs6JY_LMgVLSid31xMaWyeIOQ5qK_img.png" alt="">
 </p>
 <p>
   &nbsp;After modifying and saving the View file, press any key to enter text in the TextBox, and you will see that it
   immediately hits the breakpoints set in the change callbacks.
 </p>
-<br></body></html>ately hits the breakpoints set in the change callbacks.
-</p>
-<br></body></html>`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:".NET, C#, Json.NET, jsonpath, LINQ, SelectToken, SelectTokens",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, C# 7.0, SWAP, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"C#, Callback, MethodCallTarget, nlog, nlog message hook",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, could not find a part of the path, publish error, Visual Studio, windows long filename",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"C#, HAMCSHA256, hashing, SHA256, \uBE44\uBC00\uBC88\uD638 \uC554\uD638\uD654, \uC554\uD638\uD654",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"C#, C# \uB178\uD2B8\uBD81\uB9CC\uB4E4\uAE30, C#\uC744 \uC8FC\uD53C\uD130 \uB178\uD2B8\uBD81\uC5D0\uC11C, dotnet-interactive, Jupyter Notebook, jupyter\uB178\uD2B8\uBD81, Microsoft.dotnet-interactive, \uC8FC\uD53C\uD130\uB178\uD2B8\uBD81",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".net6, C#, C# lambda expression, C# \uB78C\uB2E4\uC2DD, C# \uB78C\uB2E4\uD45C\uD604\uC2DD, c#10, lambda, Lambda Expression, \uB78C\uB2E4\uC2DD, \uB78C\uB2E4\uD45C\uD604\uC2DD",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"C#, JSON, Json.NET, Serialization, XML, XMLtoJSON",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:".NET, Installer GUI, WixSharp, WixToolset, wpf",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:".net6, Boilerplate, CommunityToolkit.Mvvm, DependencyInjection, INotifyPropertyChanged, mvvm, MVVM Boilerplate, ObservableObject, ViewModel View\uC5D0 \uBC14\uC778\uB529, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:".net6, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, wpf, \uB2F7\uB1376",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:".net8, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, propertychanged #changeeventcallbacks, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"C#, CommunityToolkit, mvvm, WeakReferenceMessenge, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"nextjs, PlanetScale, Prisma, pscale, reactjs, SCOOP, serverless, ServerlessDB, ServerlessFunctions",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"angular, customurlserializer, defaulturlserializer, gihub, google serach console, redirect issue, SEO, SPA",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"array, destructing assignment, javascript, SWAP, typescript, \uAD6C\uC870\uBD84\uD574\uD560\uB2F9, \uBC30\uC5F4, \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8, \uD0C0\uC785\uC2A4\uD06C\uB9BD\uD2B8",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"double exclamation operator, falsy, javascript, truthy, \uC774\uC911 \uB290\uB08C\uD45C \uC5F0\uC0B0\uC790",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"array, indexing, javascript, last array element, POP, slice, \uB9C8\uC9C0\uB9C9\uC694\uC18C, \uBC30\uC5F4",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"remove unused import, Shortcut, vscode, \uC0AC\uC6A9\uB418\uC9C0 \uC54A\uB294 import \uC815\uB9AC",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"Excel, hidden rows, unhide, hidden rows, rowheight, rowfilter, rowfilters",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"ftp, IIS, WINDOWS10, \uBB34\uB8CCFTP\uC11C\uBC84, \uC708\uB3C4\uC6B0 10 \uB0B4\uC7A5 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B0 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B010FTP",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"}];var x="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",C=(t=>(t[t.format=0]="format",t[t.string2Json=1]="string2Json",t[t.json2String=2]="json2String",t[t.json2CSharp=3]="json2CSharp",t[t.base64Encode=4]="base64Encode",t[t.base64Decode=5]="base64Decode",t))(C||{}),i=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],g={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],s=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],M={label:"Home",icon:"pi pi-home",routerLink:"/"};var S=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=h(d({},M),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...i]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...s]}];let e=[...v].reverse(),n=k.map(a=>h(d({},a),{count:e.filter(t=>t.category===a.category).length}));this.flatList.push(g),this.flatList.push(...e,...i,...l,...s,...n,...c);let o={label:"Trading",items:[...c]};this.items.push(o);let r={label:"Blog",items:[g,...n]};this.items.push(r),this.flatList.forEach(a=>a.command=t=>this.navigateTo(t)),this.games=[...i],this.tools=[...l,...s.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[s.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let n=f.stripTrailingSlash(this.router.url).split("?")[0];if(n=n===""?"/":n,e.item.routerLink!==n){this.isLoadingPage=!0;let o=e.item;this.router.navigateByUrl(o.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let n=[];if(e){let o=this.flatList.filter(a=>!a.count&&a.category===e.category),r=o.indexOf(e);[-2,-1,1,2].forEach(a=>{let t=r+a;t>=0&&t<o.length&&n.push(o[t])})}return n}getMenuByUrl(e){return this.flatList.find(n=>n.routerLink===e)}getBlogContentByUrl(e){let n=e.split("/"),o=n.at(-2)??"",r=n.at(-1)??"";return m.find(a=>a.category===o&&a.id===+r)}getBlogContent(e,n){return m.find(o=>o.category===e&&o.id===n)}static \u0275fac=function(n){return new(n||p)(w(y))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{m as a,k as b,v as c,x as d,C as e,S as f};
+<br>`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:"C#, JSON, JObject, SelectToken, SelectTokens, JSONPath, LINQ, Newtonsoft.Json, JSON Parsing, JSON Manipulation",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, variable swap, Classic Method, Modern Method, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"NLog, logging, MethodCallTarget, GRPC, WebSocket, Kafka",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, file path, Windows Registry, LongPathsEnabled",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"HMACSHA256, C#, password encryption, hashing, credential helper",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"Python, Jupyter Notebook, C#, Anaconda, Miniconda, .Net, development environment",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".NET 6, C# 10, lambda expressions, compiler, attributes",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"JSON, XML, serialization, Json.NET, data exchange, structured data",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:"WixSharp, Wix toolset, Windows Desktop applications, installation file, Visual Studio, project template, NuGet packages, WPF view, C#, tutorial",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:"Visual Studio, WPF project, NuGet Packages, MVVM pattern, Dependency Injection, ViewModel, ViewModel Locator, DataContext binding",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:"MVVM pattern, ViewModel, Data Binding, ObservableProperty, Callbacks, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WeakReferenceMessenger, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"PlanetScale, NextJS, Prisma, Installation Guide, Database Connection",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"SEO, Angular, GitHub, Redirection Error, Lighthouse, Custom URL Serializer",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"Variable Swapping, JavaScript, Traditional Method, Modern Method",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"JavaScript, Double Exclamation Mark, Boolean Conversion",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"JavaScript, Array Methods, Performance Comparison, Access Last Element, Slice Method, Pop Method",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"JavaScript, TypeScript, VSCode, Unused Imports, Shortcuts",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"IIS Management Console, FTP Service, FTP Site, Firewall Configuration, FTP User Account, FTP Folder Permissions, FTP Connection Test",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"}];var x="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",T=(t=>(t[t.format=0]="format",t[t.string2Json=1]="string2Json",t[t.json2String=2]="json2String",t[t.json2CSharp=3]="json2CSharp",t[t.base64Encode=4]="base64Encode",t[t.base64Decode=5]="base64Decode",t))(T||{}),s=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],m={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],i=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],M={label:"Home",icon:"pi pi-home",routerLink:"/"};var S=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=h(d({},M),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...s]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...i]}];let e=[...v].reverse(),n=k.map(a=>h(d({},a),{count:e.filter(t=>t.category===a.category).length}));this.flatList.push(m),this.flatList.push(...e,...s,...l,...i,...n,...c);let o={label:"Trading",items:[...c]};this.items.push(o);let r={label:"Blog",items:[m,...n]};this.items.push(r),this.flatList.forEach(a=>a.command=t=>this.navigateTo(t)),this.games=[...s],this.tools=[...l,...i.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[i.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let n=w.stripTrailingSlash(this.router.url).split("?")[0];if(n=n===""?"/":n,e.item.routerLink!==n){this.isLoadingPage=!0;let o=e.item;this.router.navigateByUrl(o.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let n=[];if(e){let o=this.flatList.filter(a=>!a.count&&a.category===e.category),r=o.indexOf(e);[-2,-1,1,2].forEach(a=>{let t=r+a;t>=0&&t<o.length&&n.push(o[t])})}return n}getMenuByUrl(e){return this.flatList.find(n=>n.routerLink===e)}getBlogContentByUrl(e){let n=e.split("/"),o=n.at(-2)??"",r=n.at(-1)??"";return g.find(a=>a.category===o&&a.id===+r)}getBlogContent(e,n){return g.find(o=>o.category===e&&o.id===n)}static \u0275fac=function(n){return new(n||p)(f(y))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{g as a,k as b,v as c,x as d,T as e,S as f};
