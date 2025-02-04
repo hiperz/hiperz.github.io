@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://hiperz.github.io</loc>
-        <lastmod>2025-02-03T12:37:06.378Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/article-list/</loc>
-        <lastmod>2025-02-03T12:37:06.378Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/article-category-list/csharp/</loc>
-        <lastmod>2025-02-03T12:37:06.379Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/article-category-list/wpf/</loc>
-        <lastmod>2025-02-03T12:37:06.379Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/article-category-list/jsts/</loc>
-        <lastmod>2025-02-03T12:37:06.379Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/article-category-list/windows/</loc>
-        <lastmod>2025-02-03T12:37:06.379Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
         <loc>https://hiperz.github.io/articles/csharp/23/</loc>
         <lastmod>2025-02-03T12:37:06.379Z</lastmod>
         <changefreq>monthly</changefreq>
@@ -170,60 +134,6 @@
     </url>
     <url>
         <loc>https://hiperz.github.io/articles/windows/18/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/games/speedatoz/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/json-tools/json-to-csclass/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/json-tools/formatter/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/json-tools/json-to-string/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/json-tools/string-to-json/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/other-tools/uuid-generator/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/other-tools/base64-encode/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/other-tools/base64-decode/</loc>
-        <lastmod>2025-02-03T12:37:06.382Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://hiperz.github.io/other-tools/toss-interest-calc/</loc>
         <lastmod>2025-02-03T12:37:06.382Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
