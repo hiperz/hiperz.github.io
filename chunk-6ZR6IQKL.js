@@ -453,15 +453,15 @@ Console.WriteLine(json);\r
 <br>
 <h2 id="section3"><b>3. Creating a WixSharp Project</b></h2>
 <p>First, create a solution named WixSharpTest and a console application project named MyApp.</p>
-<p><img class="max-w-[800px]" src="./assets/images/articles/csharp/78/QIv6m_btsqYZ9TS8N_E1MENWBebzwK7mtFqpIbPk_img.png" alt=""></p>
-<p><img class="max-w-[800px]" src="./assets/images/articles/csharp/78/EMr9o_btsqZDLBLzg_M4lv1ZrSjTZqWsgrq2lq9K_img.png" alt=""></p>
+<p><img class="w-[800px]" src="./assets/images/articles/csharp/78/QIv6m_btsqYZ9TS8N_E1MENWBebzwK7mtFqpIbPk_img.png" alt=""></p>
+<p><img class="w-[800px]" src="./assets/images/articles/csharp/78/EMr9o_btsqZDLBLzg_M4lv1ZrSjTZqWsgrq2lq9K_img.png" alt=""></p>
 <p>Right-click on the solution and add a new project. Search for WixSharp, and several project templates will appear. Select Custom WPF UI.</p>
-<p><img class="max-w-[600px]" src="./assets/images/articles/csharp/78/buULbX_btsqYDF0Djb_NzkPGwuuv9CkXVgZMVWSqK_img.png" alt=""></p>
+<p><img class="w-[600px]" src="./assets/images/articles/csharp/78/buULbX_btsqYDF0Djb_NzkPGwuuv9CkXVgZMVWSqK_img.png" alt=""></p>
 <p>Name the project MyAppInstaller.</p>
-<p><img class="max-w-[600px]" src="./assets/images/articles/csharp/78/cV1L1T_btsq2h1UOtT_DiWprQFm6Jc5BBDkojMdak_img.png" alt=""></p>
+<p><img class="w-[600px]" src="./assets/images/articles/csharp/78/cV1L1T_btsq2h1UOtT_DiWprQFm6Jc5BBDkojMdak_img.png" alt=""></p>
 <p>Since the template references older versions of NuGet packages, update them to the latest versions.</p>
-<p><img class="max-w-[700px]" src="./assets/images/articles/csharp/78/dMInkm_btsq1ctgLCE_SthjrGu37RcoqSrZQhwRT1_img.png" alt=""></p>
-<p><img class="max-w-[900px]" src="./assets/images/articles/csharp/78/R2v8F_btsqYZB0y9e_V8gNF8clKvREYq7cA92q1k_img.png" alt="">
+<p><img class="w-[700px]" src="./assets/images/articles/csharp/78/dMInkm_btsq1ctgLCE_SthjrGu37RcoqSrZQhwRT1_img.png" alt=""></p>
+<p><img class="w-[900px]" src="./assets/images/articles/csharp/78/R2v8F_btsqYZB0y9e_V8gNF8clKvREYq7cA92q1k_img.png" alt="">
 <br>
 </p><h2 id="section4"><b>4. Building the Target Project and Installer Project</b></h2>
 <p>&nbsp;Modify the Program.cs file of the MyAppInstaller project as follows.</p>
@@ -518,7 +518,7 @@ Console.WriteLine(json);\r
 <p>Now, if you build MyApp and then build MyAppInstaller, an msi file will be created in the
     bin\\deployment folder.</p>
 <p>
-    <img class="max-w-[800px]" src="./assets/images/articles/csharp/78/bllnZC_btsq1I6qRG6_mqPG5GdCCoANcJMLTSD350_img.png" alt="">
+    <img class="w-[800px]" src="./assets/images/articles/csharp/78/bllnZC_btsq1I6qRG6_mqPG5GdCCoANcJMLTSD350_img.png" alt="">
     <br>
     <img class="border" src="./assets/images/articles/csharp/78/tmSjq_btsqZtWLWlG_PuCn4mBHVXrupxL187ysnk_img.png" alt="">
 </p>
@@ -723,11 +723,11 @@ npm i @prisma/client</code></pre>
 <p>Enter the prisma initialization command.</p>
 <pre><code>npx prisma init</code></pre>
 <p>After running the initialization command, the schema.prisma and .env files will be created.</p>
-<img class="max-w-[400px]" src="./assets/images/articles/jsts/6/5VEZE_btrUL7iGXPE_98Gb1t9Df3w0d2MBoYjZl0_img.png" alt="Schema and .env files">
+<img class="w-[400px]" src="./assets/images/articles/jsts/6/5VEZE_btrUL7iGXPE_98Gb1t9Df3w0d2MBoYjZl0_img.png" alt="Schema and .env files">
 <br>
 <h2 id="prisma-setup">Prisma Setup</h2>
 <p>Install the vscode extension to conveniently edit the schema.</p>
-<img class="max-w-[400px]" src="./assets/images/articles/jsts/6/q4w4Y_btrUKYGkoVo_z0t72UCIFAZtPYuG82UTFK_img.png" alt="VSCode extension">
+<img class="w-[400px]" src="./assets/images/articles/jsts/6/q4w4Y_btrUKYGkoVo_z0t72UCIFAZtPYuG82UTFK_img.png" alt="VSCode extension">
 <p>Define the schema of the table to be used in the schema.prisma file as shown below. For detailed instructions on how to define the prisma schema, please refer to <a href="https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-field-scalar-types" target="_blank" rel="noopener">https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-field-scalar-types</a>.</p>
 <p>Change the db provider in the default schema from postgresql to mysql.</p>
 <pre><code>// This is your Prisma schema file,
@@ -756,18 +756,18 @@ model Test {
 <p>Now, to connect to the database created in PlanetScale, enter the following command. (For example, if the DB name is mytestdb)</p>
 <pre><code>pscale connect mytestdb</code>
 </pre>
-<img class="max-w-[600px]" src="./assets/images/articles/jsts/6/86cvM_btrUDiTSGFg_Si0F7Yk4iuRWjRCo0o92V1_img.png" alt="DB connection command">
+<img class="w-[600px]" src="./assets/images/articles/jsts/6/86cvM_btrUDiTSGFg_Si0F7Yk4iuRWjRCo0o92V1_img.png" alt="DB connection command">
 <p>Change the DATABASE_URL in the .env file as follows.</p>
 <pre><code>DATABASE_URL="mysql://127.0.0.1:3306/mytestdb"</code>
 </pre>
 <p>Enter the following command to create the table model defined in schema.prisma in the DB.</p>
 <pre><code>npx prisma db push</code>
 </pre>
-<img class="max-w-[700px]" src="./assets/images/articles/jsts/6/4TIew_btrUIgt2Vll_X9L7VOxG5n698KHKKwTUak_img.png" alt="DB push command">
+<img class="w-[700px]" src="./assets/images/articles/jsts/6/4TIew_btrUIgt2Vll_X9L7VOxG5n698KHKKwTUak_img.png" alt="DB push command">
 <p>Once the push is successfully completed, you can check that a new table has been created on the PlanetScale website.</p>
-<img class="border max-w-[500px]" src="./assets/images/articles/jsts/6/bpUKVD_btrUHStpLzH_w62M9Pnb3277R1iOknKo4K_img.png" alt="New table created">
+<img class="border w-[500px]" src="./assets/images/articles/jsts/6/bpUKVD_btrUHStpLzH_w62M9Pnb3277R1iOknKo4K_img.png" alt="New table created">
 <p>Click on Tables on the screen above to check the created table schema.</p>
-<img class="border max-w-[500px]" src="./assets/images/articles/jsts/6/DdYcG_btrUBa9Edku_WpJNS8tcr9yuJ612fygP31_img.png" alt="Table schema">
+<img class="border w-[500px]" src="./assets/images/articles/jsts/6/DdYcG_btrUBa9Edku_WpJNS8tcr9yuJ612fygP31_img.png" alt="Table schema">
 <p>Once you have completed the above steps, you can now read and write to the DB created in PlanetScale from NextJS.</p>
 <br></body></html>`},{category:"jsts",id:92,content:`<html><head><meta name="keywords" content="SEO, Angular, GitHub, Redirection Error, Lighthouse, Custom URL Serializer">
 
@@ -879,53 +879,53 @@ export class BlaBlaComponent implements OnInit {
 </ul>
 <h2 id="section1">1. Installing IIS Management Console and FTP Service</h2>
 <p>Go to the Control Panel, navigate to "Apps &amp; Features," and click "Programs and Features."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/xQs9N_btrWv64Scf4_GhVklb64oThHxQBXgatoe0_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/xQs9N_btrWv64Scf4_GhVklb64oThHxQBXgatoe0_img.png" alt=""></p>
 <p>Click "Turn Windows features on or off."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/ck5l49_btrWuO4rOvp_rZw8bK31xqBaV0QHnfck00_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/ck5l49_btrWuO4rOvp_rZw8bK31xqBaV0QHnfck00_img.png" alt=""></p>
 <p>Select "FTP Service" and "IIS Management Console" and install them.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/EU0wl_btrWuOwD8tt_uynnFPhKLoiShPx15enH10_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/EU0wl_btrWuOwD8tt_uynnFPhKLoiShPx15enH10_img.png" alt=""></p>
 <br>
 
 <h2 id="section2">2. Creating a New FTP Site</h2>
 <p>Open the IIS Manager app.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/dNrFgj_btrWxrGWStA_kpZtHRKNbwFgxthcR3rx8K_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/dNrFgj_btrWxrGWStA_kpZtHRKNbwFgxthcR3rx8K_img.png" alt=""></p>
 <p>Right-click "Sites" and select "Add FTP Site..."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/cg0vdq_btrWyLrnGtY_rkPhWhH0iO6YnKvRqGLX7K_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/cg0vdq_btrWyLrnGtY_rkPhWhH0iO6YnKvRqGLX7K_img.png" alt=""></p>
 <p>Set an FTP site name and specify the directory path for the FTP server.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/tDACM_btrWwH4yMc6_wKlvikoZrF2UuVK6iN9UYK_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/tDACM_btrWwH4yMc6_wKlvikoZrF2UuVK6iN9UYK_img.png" alt=""></p>
 <p>Select "No SSL."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/MjyMr_btrWw8ARGux_HKQqVm1rLiNBK1KANU1Lq1_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/MjyMr_btrWw8ARGux_HKQqVm1rLiNBK1KANU1Lq1_img.png" alt=""></p>
 <p>Check "Basic Authentication," allow access to a specific user account (e.g., ftptest), enable read/write permissions, and click "Finish."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/bAt1Wr_btrWwpC6yRY_MMrKLqQxjkTmBpg9CVZupK_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/bAt1Wr_btrWwpC6yRY_MMrKLqQxjkTmBpg9CVZupK_img.png" alt=""></p>
 <br>
 
 <h2 id="section3">3. Configuring the Firewall</h2>
 <p>Open the Windows Firewall advanced settings console.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/GnQlG_btrWxsFSvIL_laKqLZUbVYWKESVuFGYk60_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/GnQlG_btrWxsFSvIL_laKqLZUbVYWKESVuFGYk60_img.png" alt=""></p>
 <p>Enable all three predefined FTP-related inbound rules.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/sTosa_btrWyOBENxc_xXMlHmAUvICyRXjHDueGsK_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/sTosa_btrWyOBENxc_xXMlHmAUvICyRXjHDueGsK_img.png" alt=""></p>
 <br>
 
 <h2 id="section4">4. Adding a User Account for FTP Access</h2>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/AC7OT_btrWx6P7QI7_5GS1qSq2EAOwaJ7A9ak3d0_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/AC7OT_btrWx6P7QI7_5GS1qSq2EAOwaJ7A9ak3d0_img.png" alt=""></p>
 <p>Right-click the Windows Start button and select "Computer Management."</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/cFqO2A_btrWxqH4jfT_nH7vwcXQDAkZk8bDu0Opx0_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/cFqO2A_btrWxqH4jfT_nH7vwcXQDAkZk8bDu0Opx0_img.png" alt=""></p>
 <p>Right-click "Users" and select "New User..." to create a new user account.</p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/viPvr_btrWx72x6Sp_qV6NDQYPOGi3cZqBKJNTKK_img.png" alt=""></p>
-<p><img class="max-w-[800px] border" src="./assets/images/articles/windows/18/rMreG_btrWw7BZjG8_BQH3qcCekrogMQZXeFAbMk_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/viPvr_btrWx72x6Sp_qV6NDQYPOGi3cZqBKJNTKK_img.png" alt=""></p>
+<p><img class="w-[800px] border" src="./assets/images/articles/windows/18/rMreG_btrWw7BZjG8_BQH3qcCekrogMQZXeFAbMk_img.png" alt=""></p>
 <br>
 
 <h2 id="section5">5. Granting User Permissions to the FTP Folder</h2>
 <p>In IIS Manager, right-click the FTP site and select "Edit Permissions."</p>
 <p>Go to the "Security" tab, click "Edit," then "Add" the new user (e.g., ftptest), and grant full control.</p>
-<img class="max-w-[800px] border" src="./assets/images/articles/windows/18/bdlTHc_btrWteJaGFD_hkJre2RkDhfnKF9lLsXOck_img.png" alt="">
-<img class="max-w-[800px] border" src="./assets/images/articles/windows/18/cT1fBm_btrWsjjF5zz_Fn4facOf3Oe1vhVk7tj2Y0_img.png" alt="">
+<img class="w-[800px] border" src="./assets/images/articles/windows/18/bdlTHc_btrWteJaGFD_hkJre2RkDhfnKF9lLsXOck_img.png" alt="">
+<img class="w-[800px] border" src="./assets/images/articles/windows/18/cT1fBm_btrWsjjF5zz_Fn4facOf3Oe1vhVk7tj2Y0_img.png" alt="">
 
 <h2 id="section6">6. Testing the FTP Connection</h2>
 <p>To verify the setup, use an FTP client like FileZilla or WinSCP.</p>
 <p>Alternatively, open a terminal and run <code>ftp localhost</code>, then enter the user credentials.</p>
 <p>Use the <code>dir</code> command to check directory access.</p>
-<img class="max-w-[500px] border" src="./assets/images/articles/windows/18/bYVxka_btrWsUKGnwT_NqZNg8VnKU5hEeWElhC9S0_img.png" alt=""></body></html>`},{category:"windows",id:33,content:`<html><head><meta name="keywords" content="unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting">
+<img class="w-[500px] border" src="./assets/images/articles/windows/18/bYVxka_btrWsUKGnwT_NqZNg8VnKU5hEeWElhC9S0_img.png" alt=""></body></html>`},{category:"windows",id:33,content:`<html><head><meta name="keywords" content="unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting">
 </head><body><h2>Table of Contents</h2>
 <ul>
   <li><a href="#section1">When Specific Rows Are Actually Hidden</a></li>
@@ -980,9 +980,9 @@ export class BlaBlaComponent implements OnInit {
 <p>After installation is complete, an icon will appear on your desktop.</p>
 <p><img src="./assets/images/articles/windows/60/pU2f3_btr9NgUFyH3_Johhb8pjp9a2dKIYpk9qek_img.png" alt=""></p>
 <p>When you run it, you'll see a list of installed offices, which you can select and uninstall.</p>
-<p><img class="max-w-[700px] border" src="./assets/images/articles/windows/60/LHTUh_btr9NCiQQ7v_fOGNXUn7vk7gE8ZeUfMeA0_img.png" alt=""></p>
+<p><img class="w-[700px] border" src="./assets/images/articles/windows/60/LHTUh_btr9NCiQQ7v_fOGNXUn7vk7gE8ZeUfMeA0_img.png" alt=""></p>
 <p>Once the uninstallation is complete, press the Restart button to restart your system and Office will be completely uninstalled.</p>
-<p><img class="max-w-[700px]" src="./assets/images/articles/windows/60/Iga6g_btr9MdYc2Wo_HSJClK917tnV3SPcO94qOk_img.png" alt=""></p>
+<p><img class="w-[700px]" src="./assets/images/articles/windows/60/Iga6g_btr9MdYc2Wo_HSJClK917tnV3SPcO94qOk_img.png" alt=""></p>
 </body></html>ga6g_btr9MdYc2Wo_HSJClK917tnV3SPcO94qOk_img.png" alt=""></p>
 </body></html>`},{category:"wpf",id:35,content:`<html><head><meta name="keywords" content="Visual Studio, WPF project, NuGet Packages, MVVM pattern, Dependency Injection, ViewModel, ViewModel Locator, DataContext binding">
 
@@ -999,15 +999,15 @@ export class BlaBlaComponent implements OnInit {
 <p>\u203B. This screenshot is based on Visual Studio 2022.</p>
 <p>Search for WPF and select the WPF Application project template.</p>
 <p>
-    <img class="max-w-[800px]" src="./assets/images/articles/wpf/35/VTvhj_btrYqLYRGCK_CVGWVkD6S56zMm9m4EJKjK_img.png" alt="">
+    <img class="w-[800px]" src="./assets/images/articles/wpf/35/VTvhj_btrYqLYRGCK_CVGWVkD6S56zMm9m4EJKjK_img.png" alt="">
 </p>
 <p>Specify the project path, solution name, and project name.</p>
 <p>
-    <img class="max-w-[700px]" src="./assets/images/articles/wpf/35/DA6XA_btrYrmYB9nD_KyJcVO6Svh70neIvwRTbE0_img.png" alt="">
+    <img class="w-[700px]" src="./assets/images/articles/wpf/35/DA6XA_btrYrmYB9nD_KyJcVO6Svh70neIvwRTbE0_img.png" alt="">
 </p>
 <p>Since this explanation is based on .Net 6.0 or higher, select 6.0.</p>
 <p>
-    <img class="max-w-[700px]" src="./assets/images/articles/wpf/35/Mt23t_btrYtxLWmVB_43bmNdFQGQFcd6tVdjsUck_img.png" alt="">
+    <img class="w-[700px]" src="./assets/images/articles/wpf/35/Mt23t_btrYtxLWmVB_43bmNdFQGQFcd6tVdjsUck_img.png" alt="">
 </p>
 <p>Once the project is created, check the solution and files in the project in Solution Explorer as shown below.</p>
 <p>
@@ -1023,7 +1023,7 @@ export class BlaBlaComponent implements OnInit {
     &lt;/ItemGroup&gt;</code></pre>
 <p>\u203B. I personally do not use the Nullable option, so I removed it.</p>
 <p>
-    <img class="max-w-[800px]" src="./assets/images/articles/wpf/35/5phz4_btrYrjnoWEc_2kDBKAX7T7glKmyHHyfxzk_img.png" alt="">
+    <img class="w-[800px]" src="./assets/images/articles/wpf/35/5phz4_btrYrjnoWEc_2kDBKAX7T7glKmyHHyfxzk_img.png" alt="">
 </p>
 <br>
 
@@ -1034,7 +1034,7 @@ export class BlaBlaComponent implements OnInit {
 </p>
 <p>Since the MainWindow.xaml file has been moved to the Views folder, modify the StartupUri in App.xaml as follows.</p>
 <p>
-    <img class="max-w-[800px]" src="./assets/images/articles/wpf/35/UTt3R_btrYriIMzz7_ffs3KylhMNrhHharALeE20_img.png" alt="">
+    <img class="w-[800px]" src="./assets/images/articles/wpf/35/UTt3R_btrYriIMzz7_ffs3KylhMNrhHharALeE20_img.png" alt="">
 </p>
 <p>Create a new class file named MainWindowViewModel.cs in the ViewModels folder.</p>
 <p>To use the code generation feature of the MVVM toolkit, add the partial keyword and define the class as inheriting from ObservableObject as follows.</p>
@@ -1147,7 +1147,7 @@ namespace MyTestApp
   the ViewModels folder and bind it to the DataContext of the MainWindow.xaml view.
 </p>
 <p>
-  <img class="max-w-[300px]" src="./assets/images/articles/wpf/44/bNdLnZ_btr0JBk4UNZ_MmYZK5kjckFZYzn9uM3Ho1_img.png" alt="">
+  <img class="w-[300px]" src="./assets/images/articles/wpf/44/bNdLnZ_btr0JBk4UNZ_MmYZK5kjckFZYzn9uM3Ho1_img.png" alt="">
 </p>
 <p id="section2">
   Now, let's declare member variables in the created ViewModel and bind them to the TextBox control in the View.
@@ -1241,7 +1241,7 @@ namespace MyTestApp.ViewModels
   will be displayed in the TextBox as shown below.
 </p>
 <p>
-  <img class="max-w-[500px]" src="./assets/images/articles/wpf/44/WudcX_btr0KG0MZra_jZhgOVAh1PCUNR9bRJPbm0_img.png" alt="">
+  <img class="w-[500px]" src="./assets/images/articles/wpf/44/WudcX_btr0KG0MZra_jZhgOVAh1PCUNR9bRJPbm0_img.png" alt="">
 </p>
 <p>
   In this post, we learned how to declare variables in the ViewModel and bind those variables to controls in the View.
@@ -1269,7 +1269,7 @@ namespace MyTestApp.ViewModels
 <h2 id="section2"><b>1. Create Message Class</b></h2>
 <p>Create a Messages folder in the project and create a TestMessage class file.</p>
 <p>
-    <img class="max-w-[300px]" src="./assets/images/articles/wpf/52/dgUn1M_btr4vo30Yhg_ZCvgshI0fiAXBdJVfHAya1_img.png" alt="">    
+    <img class="w-[300px]" src="./assets/images/articles/wpf/52/dgUn1M_btr4vo30Yhg_ZCvgshI0fiAXBdJVfHAya1_img.png" alt="">    
 </p>
 <pre id="code_1679055381567" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>using CommunityToolkit.Mvvm.Messaging.Messages;
 
@@ -1360,7 +1360,7 @@ namespace MyTestApp.ViewModels
 &lt;/Window&gt;</code></pre>
 <p>Now, after compiling and running, you can see "Hello World" displayed in the TextBox when you click the button.</p>
 <p>
-    <img class="max-w-[600px] border" src="./assets/images/articles/wpf/52/2QMz6_btr4tPg6juO_YZY2tvpje02rUvzORnLHs0_img.png" alt="">
+    <img class="w-[600px] border" src="./assets/images/articles/wpf/52/2QMz6_btr4tPg6juO_YZY2tvpje02rUvzORnLHs0_img.png" alt="">
 </p>
 <p>&nbsp;</p>
 </body></html>g6juO_YZY2tvpje02rUvzORnLHs0_img.png" alt="">
@@ -1385,21 +1385,21 @@ namespace MyTestApp.ViewModels
   the TextBox from the UI.
 </p>
 <p>
-  <img class="max-w-[200px]" src="./assets/images/articles/wpf/90/55i8l_btsLFA8Xyn5_77lXKMF6fghnYGk5sir1W1_img.png" alt="">
+  <img class="w-[200px]" src="./assets/images/articles/wpf/90/55i8l_btsLFA8Xyn5_77lXKMF6fghnYGk5sir1W1_img.png" alt="">
 </p>
 <p>
   When the ObservableProperty attribute is declared, the following callback functions are automatically generated by the
   code generator in addition to the getter and setter code that calls the PropertyChanged event.
 </p>
 <p>
-  <img class="max-w-[500px]" src="./assets/images/articles/wpf/90/b6jvcd_btsLFeE3B7j_kaDZWuAHKmrYRG329UYh6k_img.png" alt="">
+  <img class="w-[500px]" src="./assets/images/articles/wpf/90/b6jvcd_btsLFeE3B7j_kaDZWuAHKmrYRG329UYh6k_img.png" alt="">
 </p>
 <p>
   In Visual Studio, when you type partial and press the spacebar or tab key, intellisense automatically lists the
   available callback functions in the suggestion list.
 </p>
 <p>
-  <img class="max-w-[900px]" src="./assets/images/articles/wpf/90/cn3eBQ_btsLDZa4Vvc_wBKA5p8k70MaSdpN3wpi80_img.png" alt="">
+  <img class="w-[900px]" src="./assets/images/articles/wpf/90/cn3eBQ_btsLDZa4Vvc_wBKA5p8k70MaSdpN3wpi80_img.png" alt="">
 </p>
 <br>
 
@@ -1415,7 +1415,7 @@ namespace MyTestApp.ViewModels
   &nbsp;To check the order in which each callback function is called, set breakpoints (F9) on all callback functions.
 </p>
 <p>
-  <img class="max-w-[600px]" src="./assets/images/articles/wpf/90/ZVbnX_btsLFfDZbzb_2iukCy7fH48KDCCszksqh1_img.png" alt="">
+  <img class="w-[600px]" src="./assets/images/articles/wpf/90/ZVbnX_btsLFfDZbzb_2iukCy7fH48KDCCszksqh1_img.png" alt="">
 </p>
 <p>
   &nbsp;After building and running by pressing the F5 key, you can see that it stops at each callback function where the
@@ -1423,7 +1423,7 @@ namespace MyTestApp.ViewModels
   change the value in the TextBox of the window.
 </p>
 <p>
-  <img class="max-w-[300px]" src="./assets/images/articles/wpf/90/Alrgu_btsLGcM41C8_wsUAPCjqk4m3k1ed4Hogqk_img.png" alt="">
+  <img class="w-[300px]" src="./assets/images/articles/wpf/90/Alrgu_btsLGcM41C8_wsUAPCjqk4m3k1ed4Hogqk_img.png" alt="">
 </p>
 <br>
 
@@ -1439,14 +1439,14 @@ namespace MyTestApp.ViewModels
   were not called.
 </p>
 <p>
-  <img class="max-w-[400px]" src="./assets/images/articles/wpf/90/bepZv0_btsLFB7SofO_zaAluxkdBoaNhXjHcOcr40_img.png" alt="">
+  <img class="w-[400px]" src="./assets/images/articles/wpf/90/bepZv0_btsLFB7SofO_zaAluxkdBoaNhXjHcOcr40_img.png" alt="">
 </p>
 <p>
   &nbsp;Since the callback functions of the ViewModel are triggered only by the PropertyChanged event, change the Update
   Trigger mode in the TextBox binding options of the MainWindow View to PropertyChanged as follows.
 </p>
 <p>
-  <img class="max-w-[700px]" src="./assets/images/articles/wpf/90/cFkMiR_btsLFCMs6JY_LMgVLSid31xMaWyeIOQ5qK_img.png" alt="">
+  <img class="w-[700px]" src="./assets/images/articles/wpf/90/cFkMiR_btsLFCMs6JY_LMgVLSid31xMaWyeIOQ5qK_img.png" alt="">
 </p>
 <p>
   &nbsp;After modifying and saving the View file, press any key to enter text in the TextBox, and you will see that it
@@ -1454,4 +1454,4 @@ namespace MyTestApp.ViewModels
 </p>
 <br></body></html>ately hits the breakpoints set in the change callbacks.
 </p>
-<br></body></html>`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:".NET, C#, Json.NET, jsonpath, LINQ, SelectToken, SelectTokens",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, C# 7.0, SWAP, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"C#, Callback, MethodCallTarget, nlog, nlog message hook",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, could not find a part of the path, publish error, Visual Studio, windows long filename",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"C#, HAMCSHA256, hashing, SHA256, \uBE44\uBC00\uBC88\uD638 \uC554\uD638\uD654, \uC554\uD638\uD654",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"C#, C# \uB178\uD2B8\uBD81\uB9CC\uB4E4\uAE30, C#\uC744 \uC8FC\uD53C\uD130 \uB178\uD2B8\uBD81\uC5D0\uC11C, dotnet-interactive, Jupyter Notebook, jupyter\uB178\uD2B8\uBD81, Microsoft.dotnet-interactive, \uC8FC\uD53C\uD130\uB178\uD2B8\uBD81",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".net6, C#, C# lambda expression, C# \uB78C\uB2E4\uC2DD, C# \uB78C\uB2E4\uD45C\uD604\uC2DD, c#10, lambda, Lambda Expression, \uB78C\uB2E4\uC2DD, \uB78C\uB2E4\uD45C\uD604\uC2DD",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"C#, JSON, Json.NET, Serialization, XML, XMLtoJSON",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:".NET, Installer GUI, WixSharp, WixToolset, wpf",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:".net6, Boilerplate, CommunityToolkit.Mvvm, DependencyInjection, INotifyPropertyChanged, mvvm, MVVM Boilerplate, ObservableObject, ViewModel View\uC5D0 \uBC14\uC778\uB529, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:".net6, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, wpf, \uB2F7\uB1376",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:".net8, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, propertychanged #changeeventcallbacks, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"C#, CommunityToolkit, mvvm, WeakReferenceMessenge, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"nextjs, PlanetScale, Prisma, pscale, reactjs, SCOOP, serverless, ServerlessDB, ServerlessFunctions",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"angular, customurlserializer, defaulturlserializer, gihub, google serach console, redirect issue, SEO, SPA",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"array, destructing assignment, javascript, SWAP, typescript, \uAD6C\uC870\uBD84\uD574\uD560\uB2F9, \uBC30\uC5F4, \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8, \uD0C0\uC785\uC2A4\uD06C\uB9BD\uD2B8",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"double exclamation operator, falsy, javascript, truthy, \uC774\uC911 \uB290\uB08C\uD45C \uC5F0\uC0B0\uC790",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"array, indexing, javascript, last array element, POP, slice, \uB9C8\uC9C0\uB9C9\uC694\uC18C, \uBC30\uC5F4",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"remove unused import, Shortcut, vscode, \uC0AC\uC6A9\uB418\uC9C0 \uC54A\uB294 import \uC815\uB9AC",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"Excel, hidden rows, unhide, hidden rows, rowheight, rowfilter, rowfilters",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"ftp, IIS, WINDOWS10, \uBB34\uB8CCFTP\uC11C\uBC84, \uC708\uB3C4\uC6B0 10 \uB0B4\uC7A5 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B0 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B010FTP",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"}];var T="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",S=(t=>(t[t.format=0]="format",t[t.string2Json=1]="string2Json",t[t.json2String=2]="json2String",t[t.json2CSharp=3]="json2CSharp",t[t.base64Encode=4]="base64Encode",t[t.base64Decode=5]="base64Decode",t))(S||{}),i=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],g={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],s=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],x={label:"Home",icon:"pi pi-home",routerLink:"/"};var M=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=h(d({},x),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...i]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...s]}];let e=[...v].reverse(),n=k.map(a=>h(d({},a),{count:e.filter(t=>t.category===a.category).length}));this.flatList.push(g),this.flatList.push(...e,...i,...l,...s,...n,...c);let o={label:"Trading",items:[...c]};this.items.push(o);let r={label:"Blog",items:[g,...n]};this.items.push(r),this.flatList.forEach(a=>a.command=t=>this.navigateTo(t)),this.games=[...i],this.tools=[...l,...s.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[s.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let n=f.stripTrailingSlash(this.router.url).split("?")[0];if(n=n===""?"/":n,e.item.routerLink!==n){this.isLoadingPage=!0;let o=e.item;this.router.navigateByUrl(o.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let n=[];if(e){let o=this.flatList.filter(a=>!a.count&&a.category===e.category),r=o.indexOf(e);[-2,-1,1,2].forEach(a=>{let t=r+a;t>=0&&t<o.length&&n.push(o[t])})}return n}getMenuByUrl(e){return this.flatList.find(n=>n.routerLink===e)}getBlogContentByUrl(e){let n=e.split("/"),o=n.at(-2)??"",r=n.at(-1)??"";return m.find(a=>a.category===o&&a.id===+r)}getBlogContent(e,n){return m.find(o=>o.category===e&&o.id===n)}static \u0275fac=function(n){return new(n||p)(w(y))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{m as a,k as b,v as c,T as d,S as e,M as f};
+<br></body></html>`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:".NET, C#, Json.NET, jsonpath, LINQ, SelectToken, SelectTokens",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, C# 7.0, SWAP, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"C#, Callback, MethodCallTarget, nlog, nlog message hook",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, could not find a part of the path, publish error, Visual Studio, windows long filename",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"C#, HAMCSHA256, hashing, SHA256, \uBE44\uBC00\uBC88\uD638 \uC554\uD638\uD654, \uC554\uD638\uD654",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"C#, C# \uB178\uD2B8\uBD81\uB9CC\uB4E4\uAE30, C#\uC744 \uC8FC\uD53C\uD130 \uB178\uD2B8\uBD81\uC5D0\uC11C, dotnet-interactive, Jupyter Notebook, jupyter\uB178\uD2B8\uBD81, Microsoft.dotnet-interactive, \uC8FC\uD53C\uD130\uB178\uD2B8\uBD81",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".net6, C#, C# lambda expression, C# \uB78C\uB2E4\uC2DD, C# \uB78C\uB2E4\uD45C\uD604\uC2DD, c#10, lambda, Lambda Expression, \uB78C\uB2E4\uC2DD, \uB78C\uB2E4\uD45C\uD604\uC2DD",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"C#, JSON, Json.NET, Serialization, XML, XMLtoJSON",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:".NET, Installer GUI, WixSharp, WixToolset, wpf",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:".net6, Boilerplate, CommunityToolkit.Mvvm, DependencyInjection, INotifyPropertyChanged, mvvm, MVVM Boilerplate, ObservableObject, ViewModel View\uC5D0 \uBC14\uC778\uB529, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:".net6, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, wpf, \uB2F7\uB1376",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:".net8, CommunityToolkit.Mvvm, mvvm, ObservableObject, ObservableProperty, Partial Class, propertychanged #changeeventcallbacks, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"C#, CommunityToolkit, mvvm, WeakReferenceMessenge, wpf",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"nextjs, PlanetScale, Prisma, pscale, reactjs, SCOOP, serverless, ServerlessDB, ServerlessFunctions",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"angular, customurlserializer, defaulturlserializer, gihub, google serach console, redirect issue, SEO, SPA",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"array, destructing assignment, javascript, SWAP, typescript, \uAD6C\uC870\uBD84\uD574\uD560\uB2F9, \uBC30\uC5F4, \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8, \uD0C0\uC785\uC2A4\uD06C\uB9BD\uD2B8",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"double exclamation operator, falsy, javascript, truthy, \uC774\uC911 \uB290\uB08C\uD45C \uC5F0\uC0B0\uC790",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"array, indexing, javascript, last array element, POP, slice, \uB9C8\uC9C0\uB9C9\uC694\uC18C, \uBC30\uC5F4",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"remove unused import, Shortcut, vscode, \uC0AC\uC6A9\uB418\uC9C0 \uC54A\uB294 import \uC815\uB9AC",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"Excel, hidden rows, unhide, hidden rows, rowheight, rowfilter, rowfilters",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"ftp, IIS, WINDOWS10, \uBB34\uB8CCFTP\uC11C\uBC84, \uC708\uB3C4\uC6B0 10 \uB0B4\uC7A5 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B0 FTP \uC11C\uBC84, \uC708\uB3C4\uC6B010FTP",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"}];var x="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",C=(t=>(t[t.format=0]="format",t[t.string2Json=1]="string2Json",t[t.json2String=2]="json2String",t[t.json2CSharp=3]="json2CSharp",t[t.base64Encode=4]="base64Encode",t[t.base64Decode=5]="base64Decode",t))(C||{}),i=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],g={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},l=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],s=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],c=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],M={label:"Home",icon:"pi pi-home",routerLink:"/"};var S=class p{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=h(d({},M),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...i]},{label:"JSON Tools",items:[...l]},{label:"Other Tools",items:[...s]}];let e=[...v].reverse(),n=k.map(a=>h(d({},a),{count:e.filter(t=>t.category===a.category).length}));this.flatList.push(g),this.flatList.push(...e,...i,...l,...s,...n,...c);let o={label:"Trading",items:[...c]};this.items.push(o);let r={label:"Blog",items:[g,...n]};this.items.push(r),this.flatList.forEach(a=>a.command=t=>this.navigateTo(t)),this.games=[...i],this.tools=[...l,...s.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[s.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...c],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let n=f.stripTrailingSlash(this.router.url).split("?")[0];if(n=n===""?"/":n,e.item.routerLink!==n){this.isLoadingPage=!0;let o=e.item;this.router.navigateByUrl(o.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let n=[];if(e){let o=this.flatList.filter(a=>!a.count&&a.category===e.category),r=o.indexOf(e);[-2,-1,1,2].forEach(a=>{let t=r+a;t>=0&&t<o.length&&n.push(o[t])})}return n}getMenuByUrl(e){return this.flatList.find(n=>n.routerLink===e)}getBlogContentByUrl(e){let n=e.split("/"),o=n.at(-2)??"",r=n.at(-1)??"";return m.find(a=>a.category===o&&a.id===+r)}getBlogContent(e,n){return m.find(o=>o.category===e&&o.id===n)}static \u0275fac=function(n){return new(n||p)(w(y))};static \u0275prov=b({token:p,factory:p.\u0275fac,providedIn:"root"})};export{m as a,k as b,v as c,x as d,C as e,S as f};
