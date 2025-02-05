@@ -407,10 +407,10 @@ Console.WriteLine(json);\r
 <p>Original text: <a href="https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm" target="_blank" rel="noopener">https://www.newtonsoft.com/json/help/html/ConvertXmlToJson.htm</a></p>\r
 <br>`},{category:"csharp",id:78,content:`<h2>Table of Contents</h2>
 <ul>
-    <li><a href="#section1">1. Introduction to WixSharp</a></li>
-    <li><a href="#section2">2. Installing WixSharp VS Extension</a></li>
-    <li><a href="#section3">3. Creating a WixSharp Project</a></li>
-    <li><a href="#section4">4. Building the Target Project and Installer Project</a></li>
+    <li><a href="#section1">Introduction to WixSharp</a></li>
+    <li><a href="#section2">Installing WixSharp VS Extension</a></li>
+    <li><a href="#section3">Creating a WixSharp Project</a></li>
+    <li><a href="#section4">Building the Target Project and Installer Project</a></li>
 </ul>
 
 <h2 id="section1"><b>1. Introduction to WixSharp</b></h2>
@@ -512,8 +512,8 @@ Console.WriteLine(json);\r
     shortcut icons on the desktop and start menu.</p>
 `},{category:"jsts",id:31,content:`<h2>Table of Contents</h2>\r
 <ul>\r
-  <li><a href="#traditional-method">1. Traditional Method</a></li>\r
-  <li><a href="#modern-method">2. Modern Method</a></li>\r
+  <li><a href="#traditional-method">Traditional Method</a></li>\r
+  <li><a href="#modern-method">Modern Method</a></li>\r
 </ul>\r
 \r
 <h3 id="traditional-method">1. Traditional Method</h3>\r
@@ -531,9 +531,9 @@ b = temp;\r
 </code></pre><br>\r
 `},{category:"jsts",id:39,content:`<h2>Table of Contents</h2>\r
 <ul>\r
-  <li><a href="#traditional-method">1. Traditional Method</a></li>\r
-  <li><a href="#modern-method">2. Modern Method</a></li>\r
-  <li><a href="#double-exclamation-mark">3. Double Exclamation Mark (!!) in JavaScript</a></li>\r
+  <li><a href="#traditional-method">Traditional Method</a></li>\r
+  <li><a href="#modern-method">Modern Method</a></li>\r
+  <li><a href="#double-exclamation-mark">Double Exclamation Mark (!!) in JavaScript</a></li>\r
 </ul>\r
 \r
 <h3 id="traditional-method">1. Traditional Method</h3>\r
@@ -570,10 +570,10 @@ const is_d_truthy = !!d; // true\r
 `},{category:"jsts",id:55,content:`<h1>JavaScript Array Methods for Accessing the Last Element</h1>\r
 <h2>Table of Contents</h2>\r
 <ul>\r
-  <li><a href="#length-method">1. Access Last Element Using Array Length</a></li>\r
-  <li><a href="#slice-method">2. Retrieve Last Element Using Slice Method</a></li>\r
-  <li><a href="#pop-method">3. Retrieve Last Element Using Pop Method</a></li>\r
-  <li><a href="#performance-comparison">4. Performance Comparison (Chrome)</a></li>\r
+  <li><a href="#length-method">Access Last Element Using Array Length</a></li>\r
+  <li><a href="#slice-method">Retrieve Last Element Using Slice Method</a></li>\r
+  <li><a href="#pop-method">Retrieve Last Element Using Pop Method</a></li>\r
+  <li><a href="#performance-comparison">Performance Comparison (Chrome)</a></li>\r
 </ul>\r
 \r
 <h3 id="length-method">1. Access Last Element Using Array Length</h3>\r
@@ -812,6 +812,324 @@ export class BlaBlaComponent implements OnInit {
 <p class="my-2">
   &nbsp;I hope this helps those who are hosting web apps with Angular SPA on Github and experiencing redirection issues.
 </p><br>
+`},{category:"sql",id:12,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+    <li><a href="#json-operators">JSON Operators</a></li>\r
+    <li><a href="#example-table">Example Table</a></li>\r
+    <li><a href="#json-queries">JSON Query Examples</a>\r
+        <ul>\r
+            <li><a href="#query-name">Retrieve the <code>name</code> Property</a></li>\r
+            <li><a href="#query-size-length">Retrieve the <code>size.length</code> Property</a></li>\r
+            <li><a href="#query-size-isbig">Retrieve Records with <code>size.isBig = true</code></a></li>\r
+            <li><a href="#query-array-id">Retrieve Objects with <code>id = 2</code> from the <code>array</code></a></li>\r
+        </ul>\r
+    </li>\r
+</ul>\r
+\r
+<p>Official Documentation: <a href="https://www.postgresql.org/docs/9.3/functions-json.html" target="_blank" rel="noopener">PostgreSQL JSON Functions</a></p>\r
+<br>\r
+<h2 id="json-operators">JSON Operators</h2>\r
+<table border="1" style="border-collapse: collapse; width: 100%;">\r
+    <thead>\r
+        <tr>\r
+            <th>Operator</th>\r
+            <th>Right Operand Type</th>\r
+            <th>Description</th>\r
+            <th>Example</th>\r
+        </tr>\r
+    </thead>\r
+    <tbody>\r
+        <tr>\r
+            <td>-&gt;</td>\r
+            <td>int</td>\r
+            <td>Get JSON array element</td>\r
+            <td><code>'[1,2,3]'::json-&gt;2</code></td>\r
+        </tr>\r
+        <tr>\r
+            <td>-&gt;</td>\r
+            <td>text</td>\r
+            <td>Get JSON object field</td>\r
+            <td><code>'{"a":1,"b":2}'::json-&gt;'b'</code></td>\r
+        </tr>\r
+        <tr>\r
+            <td>-&gt;&gt;</td>\r
+            <td>int</td>\r
+            <td>Get JSON array element as text</td>\r
+            <td><code>'[1,2,3]'::json-&gt;&gt;2</code></td>\r
+        </tr>\r
+        <tr>\r
+            <td>-&gt;&gt;</td>\r
+            <td>text</td>\r
+            <td>Get JSON object field as text</td>\r
+            <td><code>'{"a":1,"b":2}'::json-&gt;&gt;'b'</code></td>\r
+        </tr>\r
+        <tr>\r
+            <td>#&gt;</td>\r
+            <td>array of text</td>\r
+            <td>Get JSON object at specified path</td>\r
+            <td><code>'{"a":[1,2,3],"b":[4,5,6]}'::json#&gt;'{a,2}'</code></td>\r
+        </tr>\r
+        <tr>\r
+            <td>#&gt;&gt;</td>\r
+            <td>array of text</td>\r
+            <td>Get JSON object at specified path as text</td>\r
+            <td><code>'{"a":[1,2,3],"b":[4,5,6]}'::json#&gt;&gt;'{a,2}'</code></td>\r
+        </tr>\r
+    </tbody>\r
+</table>\r
+<br>\r
+<h2 id="example-table">Example Table</h2>\r
+<table border="1" style="border-collapse: collapse; width: 60%;">\r
+    <thead>\r
+        <tr>\r
+            <th>Id</th>\r
+            <th>Content</th>\r
+        </tr>\r
+    </thead>\r
+    <tbody>\r
+        <tr>\r
+            <td>1</td>\r
+            <td>\r
+                {<br>\r
+                "name": "my json data 1",<br>\r
+                "size": { "length": 100, "width": 200, "isBig": false },<br>\r
+                "array": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]<br>\r
+                }\r
+            </td>\r
+        </tr>\r
+        <tr>\r
+            <td>2</td>\r
+            <td>\r
+                {<br>\r
+                "name": "my json data 2",<br>\r
+                "size": { "length": 100, "width": 200, "isBig": true },<br>\r
+                "array": [{ "id": 1 }, { "id": 2 }, { "id": 3 }]<br>\r
+                }\r
+            </td>\r
+        </tr>\r
+    </tbody>\r
+</table>\r
+<br>\r
+<h2 id="json-queries">JSON Query Examples</h2>\r
+<div class="mt-3"></div>\r
+<h3 id="query-name">1. Retrieve the <code>name</code> Property</h3>\r
+<pre><code>SELECT "content" -&gt;&gt; 'name' FROM "example";</code>\r
+</pre>\r
+\r
+<h3 id="query-size-length">2. Retrieve the <code>size.length</code> Property</h3>\r
+<pre><code>SELECT "content" -&gt; 'size' -&gt;&gt; 'length' FROM "example";</code>\r
+</pre>\r
+\r
+<h3 id="query-size-isbig">3. Retrieve Records with <code>size.isBig = true</code></h3>\r
+<pre><code>SELECT * FROM "example" WHERE ("content" -&gt; 'size' -&gt;&gt; 'isBig')::bool IS TRUE;</code>\r
+</pre>\r
+\r
+<h3 id="query-array-id">4. Retrieve Objects with <code>id = 2</code> from the <code>array</code></h3>\r
+<pre><code>SELECT * FROM "example", json_array_elements("content" -&gt; 'array') a \r
+WHERE (a -&gt;&gt; 'id')::int = 2;</code>\r
+</pre>\r
+\r
+`},{category:"sql",id:13,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+  <li><a href="#split-into-columns">Splitting a String into Columns</a></li>\r
+  <li><a href="#split-into-array">Splitting a String into an Array</a></li>\r
+  <li><a href="#split-into-rows">Splitting a String into Rows</a></li>\r
+</ul>\r
+\r
+<h2 id="split-into-columns">1. Splitting a String into Columns</h2>\r
+<p>The following SQL query splits a comma-separated string into individual columns.</p>\r
+<pre class="sql"><code>WITH test AS (SELECT 'Seoul,Daegu,Busan,Daejeon,Incheon,Gwangju' cities)\r
+SELECT \r
+    split_part(cities, ',', 1) AS "1", \r
+    split_part(cities, ',', 2) AS "2", \r
+    split_part(cities, ',', 3) AS "3", \r
+    split_part(cities, ',', 4) AS "4", \r
+    split_part(cities, ',', 5) AS "5", \r
+    split_part(cities, ',', 6) AS "6" \r
+FROM test;</code></pre>\r
+<!-- <img src="example1.png" alt="SQL result for splitting a string into columns" /> -->\r
+<br>\r
+<h2 id="split-into-array">2. Splitting a String into an Array</h2>\r
+<p>The following SQL query converts a comma-separated string into an array.</p>\r
+<pre class="sql"><code>WITH test AS (SELECT 'Seoul,Daegu,Busan,Daejeon,Incheon,Gwangju' cities)\r
+SELECT string_to_array(cities, ',') FROM test;</code></pre>\r
+<!-- <img src="example2.png" alt="SQL result for splitting a string into an array" /> -->\r
+<br>\r
+<h2 id="split-into-rows">3. Splitting a String into Rows</h2>\r
+<p>The following SQL query converts a comma-separated string into multiple rows.</p>\r
+<pre class="sql"><code>WITH test AS (SELECT 'Seoul,Daegu,Busan,Daejeon,Incheon,Gwangju' cities)\r
+SELECT unnest(string_to_array(cities, ',')) FROM test;</code></pre>\r
+<!-- <img src="example3.png" alt="SQL result for splitting a string into rows" /> -->\r
+<br>`},{category:"sql",id:14,content:`<h3>Table of Contents</h3>\r
+<ul>\r
+  <li><a href="#introduction">Introduction</a></li>\r
+  <li><a href="#example">Example Query</a></li>\r
+  <li><a href="#output">Expected Output</a></li>\r
+</ul>\r
+\r
+<h3 id="introduction">Introduction</h3>\r
+<p>The <code>json_array_elements()</code> function in PostgreSQL allows you to extract elements from a JSON array property and return them as separate rows.</p><br>\r
+\r
+<h3 id="example">Example Query</h3>\r
+<pre id="code_1673580142982" class="sql" data-ke-language="sql" data-ke-type="codeblock">\r
+<code>WITH test AS (\r
+  SELECT '{"array": [ "v1", "v2", "v3", "v4", "v5" ]}'::json AS json\r
+)\r
+SELECT j.* FROM test, json_array_elements(json -> 'array') j;</code>\r
+</pre><br>\r
+\r
+<h3 id="output">Expected Output</h3>\r
+<p>The above query will return each element of the JSON array as a separate row.</p>\r
+<p><img src="./assets/images/articles/sql/14/beMDvK_btrV85daX7i_eBGunyfSfAdGMNSk76Kadk_img.png" alt="Query Result"></p>\r
+<br>\r
+`},{category:"sql",id:46,content:`<h3>Table of Contents</h3>\r
+<ul>\r
+    <li><a href="#issue">Issue Overview</a></li>\r
+    <li><a href="#solution">Solution</a></li>\r
+    <li><a href="#sql">SQL Command</a></li>\r
+</ul>\r
+\r
+<h3 id="issue">Issue Overview</h3>\r
+<p>Sometimes, the master database on the C drive may become corrupted or lost, leaving only the MDF and LDF files as backups. When reattaching these database files to a SQL Server instance, you may encounter an issue where the login user in SQL Server does not match the user ID within the attached database. This discrepancy prevents proper access to the database.</p><br>\r
+\r
+<h3 id="solution">Solution</h3>\r
+<p>One way to resolve this is by manually deleting the user from the database and remapping it through the SQL Server Management Studio (SSMS) GUI. However, a more efficient approach is to execute a stored procedure to fix the mismatch automatically.</p><br>\r
+\r
+<h3 id="sql">SQL Command</h3>\r
+<p>Run the following SQL command to update the login mapping for the database user:</p>\r
+<pre class="sql" data-ke-language="sql" data-ke-type="codeblock">\r
+<code>EXEC sp_change_users_login 'Update_One', 'myuser', 'myuser'</code></pre>\r
+\r
+<p>This command ensures that the specified login user is correctly mapped to the corresponding database user, resolving any orphaned user issues efficiently.</p><br>\r
+`},{category:"sql",id:56,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+    <li><a href="#problem-with-nested-select">Problem with Nested Select Queries</a></li>\r
+    <li><a href="#using-temporary-tables">Using Temporary Tables for Optimization</a></li>\r
+    <li><a href="#creating-a-temporary-table">Creating a Temporary Table in PostgreSQL</a></li>\r
+    <li><a href="#on-commit-options">ON COMMIT Options</a></li>\r
+    <li><a href="#official-documentation">Official Documentation</a></li>\r
+</ul>\r
+\r
+<h2 id="problem-with-nested-select">Problem with Nested Select Queries</h2>\r
+<p>When writing complex SQL queries in a single statement, you may need to use nested select queries. These queries often lead to additional JOIN operations, which can significantly increase execution time due to high computational costs.</p><br>\r
+\r
+<h2 id="using-temporary-tables">Using Temporary Tables for Optimization</h2>\r
+<p>To avoid performance issues with nested selects, you can create temporary tables to store intermediate query results. By performing JOIN operations on these temporary tables instead, you can retrieve data much faster.</p><br>\r
+\r
+<h2 id="creating-a-temporary-table">Creating a Temporary Table in PostgreSQL</h2>\r
+<p>In PostgreSQL, you can create a temporary table using the following syntax:</p>\r
+<pre><code>CREATE TEMP TABLE temp_test\r
+(\r
+  "Id" INT,\r
+  "Name" TEXT\r
+);</code></pre>\r
+<br>\r
+\r
+<h2 id="on-commit-options">ON COMMIT Options</h2>\r
+<p>Unlike MSSQL, PostgreSQL allows additional options when creating temporary tables:</p>\r
+\r
+<pre><code>-- By default, the table preserves rows across transactions.\r
+CREATE TEMP TABLE temp_test\r
+(\r
+  "Id" INT,\r
+  "Name" TEXT\r
+)\r
+ON COMMIT PRESERVE ROWS;\r
+\r
+-- Deletes all rows when the transaction is committed, but the table remains.\r
+CREATE TEMP TABLE temp_test\r
+(\r
+  "Id" INT,\r
+  "Name" TEXT\r
+)\r
+ON COMMIT DELETE ROWS;\r
+\r
+-- Drops the table entirely upon transaction commit.\r
+CREATE TEMP TABLE temp_test\r
+(\r
+  "Id" INT,\r
+  "Name" TEXT\r
+)\r
+ON COMMIT DROP;</code></pre>\r
+<br>\r
+\r
+<h2 id="official-documentation">Official Documentation</h2>\r
+<p>For more details, refer to the official PostgreSQL documentation: \r
+<a href="https://www.postgresql.org/docs/current/sql-createtable.html" target="_blank" rel="noopener">PostgreSQL CREATE TABLE Documentation</a></p><br>\r
+`},{category:"sql",id:80,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+    <li><a href="#step1">Install Slave MySQL DB and Edit Configuration File</a></li>\r
+    <li><a href="#step2">Copy the Data Folder</a></li>\r
+    <li><a href="#step3">Start Replication</a></li>\r
+</ul>\r
+\r
+<p>&nbsp;In systems with a single database server, when multiple clients send a large number of query requests simultaneously, it can result in slower processing speeds. This becomes even more critical if the system involves continuously writing data in real-time. If the system cannot write data to the database on time, it could lead to serious issues. One way to avoid this excessive load is by using the replication feature to create multiple copies of the database, distributing the load across different servers.</p>\r
+<p>&nbsp;In my case, since I need to write data to the database in real-time and cannot afford any failures in data recording due to external factors, I configured one database as the Master and allowed only the software that writes and updates data to access it. External clients read data from a replicated Slave database to distribute the load and solve the problem.</p>\r
+<p>&nbsp;</p>\r
+\r
+<h2 id="step1">1. Install Slave MySQL DB and Edit Configuration File</h2>\r
+<p>Activating replication in MySQL is quite simple. First, configure the existing MySQL DB as the Master and install MySQL on another PC to set it as the Slave. Then, modify the configuration file as shown below. To edit the configuration file, stop the running MySQL server first.</p>\r
+<table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">\r
+    <tbody>\r
+        <tr>\r
+            <th style="width: 25%;">File Name</td>\r
+            <th style="width: 25%;">PC1 (Master)</td>\r
+            <th style="width: 50%;">PC2 (Slave)</td>\r
+        </tr>\r
+        <tr>\r
+            <td style="width: 25%;">my.ini</td>\r
+            <td style="width: 25%;">server-id = 1 <br />log-bin = mysql-bin</td>\r
+            <td style="width: 50%;">server-id = 2 <br />log-bin = mysql-bin</td>\r
+        </tr>\r
+    </tbody>\r
+</table>\r
+<br>\r
+\r
+<h2 id="step2">2. Copy the Data Folder</h2>\r
+<p>Copy the data folder from the Master DB to the MySQL data folder on the Slave PC.</p>\r
+<br>\r
+\r
+<h2 id="step3">3. Start Replication</h2>\r
+<p>Now, start both the Master and Slave MySQL servers that were previously stopped.</p>\r
+<p>Run the following query on the Master server:</p>\r
+<pre id="code_1692111897963" class="sql" data-ke-language="sql" data-ke-type="codeblock"><code>SHOW MASTER STATUS</code></pre>\r
+<p><img src="./assets/images/articles/sql/80/bqYGmZ_btsrf3pRZLf_1jC4eIZrKQdKEXKrDecvBk_img.png" alt=""></p>\r
+<p>Then, execute the following query on the Slave server:</p>\r
+<pre id="code_1692111968674" class="sql" data-ke-language="sql" data-ke-type="codeblock"><code>CHANGE MASTER TO\r
+  MASTER_HOST = '172.27.208.1', -- Master server's IP\r
+  MASTER_USER = 'root',\r
+  MASTER_PASSWORD = 'root',\r
+  MASTER_LOG_FILE = 'mysql-bin.000003', -- Master log file\r
+  MASTER_LOG_POS = 98; -- Master log position\r
+\r
+START SLAVE;</code></pre>\r
+\r
+<p>Once the query is executed, replication will begin on the Slave server. To check the replication status, run the following query:</p>\r
+<pre id="code_1692112133597" class="sql" data-ke-language="sql" data-ke-type="codeblock"><code>SHOW SLAVE STATUS</code></pre>\r
+<p><img src="./assets/images/articles/sql/80/KXTmU_btsrcsDuMee_mE2Ec5uJVmks2GOQult9i1_img.png" alt=""></p>\r
+<p>If both "Slave_IO_Running" and "Slave_SQL_Running" show "Yes," replication is working correctly. If either of them shows "No," check the log files to diagnose and resolve the issue.</p>\r
+\r
+<p>Now that replication is running, all transactions happening on the Master DB will also occur on the Slave DB.</p>\r
+\r
+<p>If the Slave has been down for a long time and is restarted, it might not work correctly if the log files and position from before the downtime are cleared. In such cases, stop both the Master and Slave MySQL servers and follow the procedure from Step 2 to reinitialize replication.</p>\r
+<br>\r
+`},{category:"sql",id:81,content:`<h2>Table of Contents</h2>\r
+<ul>\r
+  <li><a href="#activate-trigger">Activating a Trigger</a></li>\r
+  <li><a href="#deactivate-trigger">Deactivating a Trigger</a></li>\r
+</ul>\r
+\r
+<section id="activate-trigger">\r
+  <h3>Activating a Trigger</h3>\r
+  <p>To activate a trigger in a table, use the following SQL command:</p>\r
+  <pre><code class="sql">ALTER TABLE [table_name] ENABLE TRIGGER [trigger_name]</code></pre><br>\r
+</section>\r
+\r
+<section id="deactivate-trigger">\r
+  <h3>Deactivating a Trigger</h3>\r
+  <p>To deactivate a trigger in a table, use the following SQL command:</p>\r
+  <pre><code class="sql">ALTER TABLE [table_name] DISABLE TRIGGER [trigger_name]</code></pre><br>\r
+</section>\r
 `},{category:"windows",id:18,content:`<h2>Table of Contents</h2>
 <ul>
   <li><a href="#section1">Installing IIS Management Console and FTP Service</a></li>
@@ -1181,9 +1499,9 @@ namespace MyTestApp.ViewModels
 <p>&nbsp;</p>
 `},{category:"wpf",id:52,content:`<h2>Table of Contents</h2>
 <ul>
-    <li><a href="#section1">1. Create Message Class</a></li>
-    <li><a href="#section2">2. Register to Receive Messages in the View</a></li>
-    <li><a href="#section3">3. Add Button and TextBox Controls to the View</a></li>
+    <li><a href="#section1">Create Message Class</a></li>
+    <li><a href="#section2">Register to Receive Messages in the View</a></li>
+    <li><a href="#section3">Add Button and TextBox Controls to the View</a></li>
 </ul>
 
 <p id="section1">&nbsp;When developing with the MVVM pattern, there are many cases where you need to deliver events from one ViewModel to another or from a ViewModel to a View in a 1:1 or 1:N manner. In this case, you can create a static class to handle events accessible globally, or create a service class to handle event variables accessible from multiple ViewModels through dependency injection. However, using the WeakReferenceMessenger class provided by CommunityToolkit, you can easily implement a Pub/Sub style event queue.</p>
@@ -1375,4 +1693,4 @@ namespace MyTestApp.ViewModels
   &nbsp;After modifying and saving the View file, press any key to enter text in the TextBox, and you will see that it
   immediately hits the breakpoints set in the change callbacks.
 </p>
-<br>`}],k=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:"C#, JSON, JObject, SelectToken, SelectTokens, JSONPath, LINQ, Newtonsoft.Json, JSON Parsing, JSON Manipulation",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, variable swap, Classic Method, Modern Method, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"NLog, logging, MethodCallTarget, GRPC, WebSocket, Kafka",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, file path, Windows Registry, LongPathsEnabled",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"HMACSHA256, C#, password encryption, hashing, credential helper",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"Python, Jupyter Notebook, C#, Anaconda, Miniconda, .Net, development environment",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".NET 6, C# 10, lambda expressions, compiler, attributes",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"JSON, XML, serialization, Json.NET, data exchange, structured data",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:"WixSharp, Wix toolset, Windows Desktop applications, installation file, Visual Studio, project template, NuGet packages, WPF view, C#, tutorial",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:"Visual Studio, WPF project, NuGet Packages, MVVM pattern, Dependency Injection, ViewModel, ViewModel Locator, DataContext binding",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:"MVVM pattern, ViewModel, Data Binding, ObservableProperty, Callbacks, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WeakReferenceMessenger, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"PlanetScale, NextJS, Prisma, Installation Guide, Database Connection",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"SEO, Angular, GitHub, Redirection Error, Lighthouse, Custom URL Serializer",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"Variable Swapping, JavaScript, Traditional Method, Modern Method",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"JavaScript, Double Exclamation Mark, Boolean Conversion",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"JavaScript, Array Methods, Performance Comparison, Access Last Element, Slice Method, Pop Method",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"JavaScript, TypeScript, VSCode, Unused Imports, Shortcuts",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"IIS Management Console, FTP Service, FTP Site, Firewall Configuration, FTP User Account, FTP Folder Permissions, FTP Connection Test",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"}];var x="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",T=(n=>(n[n.format=0]="format",n[n.string2Json=1]="string2Json",n[n.json2String=2]="json2String",n[n.json2CSharp=3]="json2CSharp",n[n.base64Encode=4]="base64Encode",n[n.base64Decode=5]="base64Decode",n))(T||{}),s=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],l={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},c=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],i=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],p=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],M={label:"Home",icon:"pi pi-home",routerLink:"/"};var S=class d{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=g(h({},M),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];articleGroups=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...s]},{label:"JSON Tools",items:[...c]},{label:"Other Tools",items:[...i]}];let e=[...v].reverse(),t=k.map(a=>g(h({},a),{count:e.filter(n=>n.category===a.category).length}));this.flatList.push(l),this.flatList.push(...e,...s,...c,...i,...t,...p);let o={label:"Trading",items:[...p]};this.items.push(o);let r={label:"Blog",items:[l,...t]};this.items.push(r),this.flatList.forEach(a=>a.command=n=>this.navigateTo(n)),this.games=[...s],this.tools=[...c,...i.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[i.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...p],this.articleGroups=[l,...t],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let t=w.stripTrailingSlash(this.router.url).split("?")[0];if(t=t===""?"/":t,e.item.routerLink!==t){this.isLoadingPage=!0;let o=e.item;this.router.navigateByUrl(o.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let t=[];if(e){let o=this.flatList.filter(a=>!a.count&&a.category===e.category),r=o.indexOf(e);[-2,-1,1,2].forEach(a=>{let n=r+a;n>=0&&n<o.length&&t.push(o[n])})}return t}getMenuByUrl(e){return this.flatList.find(t=>t.routerLink===e)}getBlogContentByUrl(e){let t=e.split("/"),o=t.at(-2)??"",r=t.at(-1)??"";return m.find(a=>a.category===o&&a.id===+r)}getBlogContent(e,t){return m.find(o=>o.category===e&&o.id===t)}static \u0275fac=function(t){return new(t||d)(f(y))};static \u0275prov=b({token:d,factory:d.\u0275fac,providedIn:"root"})};export{m as a,k as b,v as c,x as d,T as e,S as f};
+<br>`}],S=[{label:"C#",icon:"pi pi-folder",routerLink:"/article-category-list/csharp",category:"csharp"},{label:"WPF",icon:"pi pi-folder",routerLink:"/article-category-list/wpf",category:"wpf"},{label:"JavaScript/TypeScript",icon:"pi pi-folder",routerLink:"/article-category-list/jsts",category:"jsts"},{label:"Windows",icon:"pi pi-folder",routerLink:"/article-category-list/windows",category:"windows"},{label:"SQL",icon:"pi pi-folder",routerLink:"/article-category-list/sql",category:"sql"}],v=[{label:"[C#] Convert enum type to string during JSON Serialization",routerLink:"/articles/csharp/23",keywords:"C#, ENUM, enumToString, JSON, Serialization, \uC5F4\uAC70\uD615\uC744 \uBB38\uC790\uC5F4\uB85C \uC9C1\uB82C\uD654, \uC9C1\uB82C\uD654",category:"csharp",timestamp:"2025-01-25T14:57:50.369Z"},{label:"[C#][Json.Net] Using SelectToken/SelectTokens",routerLink:"/articles/csharp/24",keywords:"C#, JSON, JObject, SelectToken, SelectTokens, JSONPath, LINQ, Newtonsoft.Json, JSON Parsing, JSON Manipulation",category:"csharp",timestamp:"2025-01-25T16:26:11.340Z"},{label:"[C#] Swapping the Values of Two Variables",routerLink:"/articles/csharp/32",keywords:"C#, variable swap, Classic Method, Modern Method, tuple",category:"csharp",timestamp:"2025-01-25T17:29:59.870Z"},{label:"[C#][NLog] Creating a Callback Function That is Called Every Time a Log Message is Generated",routerLink:"/articles/csharp/34",keywords:"NLog, logging, MethodCallTarget, GRPC, WebSocket, Kafka",category:"csharp",timestamp:"2025-01-25T18:40:39.985Z"},{label:"[C#] 'Could not find a part of the path...' Error When Publishing a Project",routerLink:"/articles/csharp/38",keywords:"C#, file path, Windows Registry, LongPathsEnabled",category:"csharp",timestamp:"2025-02-04T12:27:35.488Z"},{label:"[C#] Encrypting User Passwords Using the HMACSHA256 Class",routerLink:"/articles/csharp/40",keywords:"HMACSHA256, C#, password encryption, hashing, credential helper",category:"csharp",timestamp:"2025-01-25T18:58:23.428Z"},{label:"[C#] Using C# in Jupyter Notebook",routerLink:"/articles/csharp/45",keywords:"Python, Jupyter Notebook, C#, Anaconda, Miniconda, .Net, development environment",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[C#] Improvements to Lambda Expressions in C# 10",routerLink:"/articles/csharp/47",keywords:".NET 6, C# 10, lambda expressions, compiler, attributes",category:"csharp",timestamp:"2025-01-25T19:07:37.032Z"},{label:"[C#] How to Serialize XML to JSON Using Json.NET",routerLink:"/articles/csharp/53",keywords:"JSON, XML, serialization, Json.NET, data exchange, structured data",category:"csharp",timestamp:"2025-01-25T19:11:33.216Z"},{label:"[C#][.NET] Creating an MSI Installer with WixSharp",routerLink:"/articles/csharp/78",keywords:"WixSharp, Wix toolset, Windows Desktop applications, installation file, Visual Studio, project template, NuGet packages, WPF view, C#, tutorial",category:"csharp",timestamp:"2025-02-04T12:27:35.489Z"},{label:"[WPF/CommunityToolkit.Mvvm] 1. Write boilerplate code after creating the project",routerLink:"/articles/wpf/35",keywords:"Visual Studio, WPF project, NuGet Packages, MVVM pattern, Dependency Injection, ViewModel, ViewModel Locator, DataContext binding",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 2. Create a ViewModel and bind its member variables to the View",routerLink:"/articles/wpf/44",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"[WPF/CommunityToolkit.Mvvm] 3. ObservableProperty\uC758 Change event callbacks",routerLink:"/articles/wpf/90",keywords:"MVVM pattern, ViewModel, Data Binding, ObservableProperty, Callbacks, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.493Z"},{label:"[WPF/CommunityToolkit.Mvvm] 4. WeakReferenceMessenger",routerLink:"/articles/wpf/52",keywords:"MVVM pattern, ViewModel, Data Binding, CommunityToolkit.Mvvm, WeakReferenceMessenger, WPF, Visual Studio",category:"wpf",timestamp:"2025-02-04T12:27:35.492Z"},{label:"How to use NextJS + Prisma + PlanetScale",routerLink:"/articles/jsts/6",keywords:"PlanetScale, NextJS, Prisma, Installation Guide, Database Connection",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Angular][Google Search Console] Redirect issue",routerLink:"/articles/jsts/92",keywords:"SEO, Angular, GitHub, Redirection Error, Lighthouse, Custom URL Serializer",category:"jsts",timestamp:"2025-02-04T12:27:35.490Z"},{label:"[Javascript] Swapping the values of two variables",routerLink:"/articles/jsts/31",keywords:"Variable Swapping, JavaScript, Traditional Method, Modern Method",category:"jsts",timestamp:"2025-02-03T11:22:11.966Z"},{label:"[Javascript] Double Exclamation Operator",routerLink:"/articles/jsts/39",keywords:"JavaScript, Double Exclamation Mark, Boolean Conversion",category:"jsts",timestamp:"2025-02-03T11:26:15.647Z"},{label:"[JavaScript] Three ways to get the last element of an array",routerLink:"/articles/jsts/55",keywords:"JavaScript, Array Methods, Performance Comparison, Access Last Element, Slice Method, Pop Method",category:"jsts",timestamp:"2025-02-03T11:28:00.999Z"},{label:"[VSCODE] Shortcuts to automatically remove unused imports",routerLink:"/articles/jsts/58",keywords:"JavaScript, TypeScript, VSCode, Unused Imports, Shortcuts",category:"jsts",timestamp:"2025-02-03T11:30:15.625Z"},{label:"[Office365] MS-provided Office 365 app removal support tools",routerLink:"/articles/windows/60",keywords:"clean uninstall office365, office365, uninstall office, uninstall office365, remove office",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Excel] How to solve if certain rows are not visible in an excel file",routerLink:"/articles/windows/33",keywords:"unhide rows, Excel tips, row height adjustment, automatic filters, Excel troubleshooting",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[Windows 10] How to Install and Set Up FTP Server",routerLink:"/articles/windows/18",keywords:"IIS Management Console, FTP Service, FTP Site, Firewall Configuration, FTP User Account, FTP Folder Permissions, FTP Connection Test",category:"windows",timestamp:"2025-02-04T12:27:35.491Z"},{label:"[PostgreSql] JSON Functions and Operators",routerLink:"/articles/sql/12",keywords:"PostgreSQL, JSON Functions, JSON Operators, SQL Queries, Database, JSON Processing",category:"sql",timestamp:"2025-02-05T15:03:43.796Z"},{label:"[PostgreSql] Splitting Strings",routerLink:"/articles/sql/13",keywords:"PostgreSQL, SQL, String Split, Array, Unnest, Database",category:"sql",timestamp:"2025-02-05T15:04:44.765Z"},{label:"[PostgreSql] Using json_array_elements()",routerLink:"/articles/sql/14",keywords:"jPostgreSQL, JSON, json_array_elements, SQL, database",category:"sql",timestamp:"2025-02-05T16:22:21.891Z"},{label:"[MS-SQL] Fixing Orphaned Users After Attaching an MDF/LDF File in SQL Server",routerLink:"/articles/sql/46",keywords:"SQL Server, Attach Database, MDF, LDF, sp_change_users_login, Fix Orphaned Users",category:"sql",timestamp:"2025-02-05T16:20:23.242Z"},{label:"[PostgreSQL] Optimizing SQL Queries with Temporary Tables",routerLink:"/articles/sql/56",keywords:"PostgreSQL, SQL, Temporary Table, Performance Optimization, Nested Select, ON COMMIT",category:"sql",timestamp:"2025-02-05T16:23:42.035Z"},{label:"[MySQL] How to Use Replication in MySQL 5",routerLink:"/articles/sql/80",keywords:"MySQL, Replication, Master-Slave, Database, MySQL Configuration, Replication Setup, Database Clustering",isNew:!0,category:"sql",timestamp:"2025-02-05T16:25:35.169Z"},{label:"[MSSQL] Activate/Deactivate Trigger",routerLink:"/articles/sql/81",keywords:"trigger, activate trigger, disable trigger, alter table, SQL, database management",isNew:!0,category:"sql",timestamp:"2025-02-05T16:26:28.157Z"}];var x="JunaPapa's Blog is a comprehensive website where you can find a variety of games I developed for casual play on the web, useful developer tools, and posts with development tips and troubleshooting advice.",M=(n=>(n[n.format=0]="format",n[n.string2Json=1]="string2Json",n[n.json2String=2]="json2String",n[n.json2CSharp=3]="json2CSharp",n[n.base64Encode=4]="base64Encode",n[n.base64Decode=5]="base64Decode",n))(M||{}),s=[{label:"\u{1F680} Speed Typing A to Z \u{1F680}",routerLink:"/games/speedatoz",data:{title:"\u{1F680} Speed Typing A to Z \u{1F680}",subTitle:"Try typing alphabet A to Z as quick as you can!"}}],l={label:"Blog Posts",icon:"pi pi-list",items:[],routerLink:"/article-list"},c=[{label:"JSON to C# Class",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-csclass",data:{title:"JSON to C# Class",subTitle:"Convert JSON to C# Class",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Generate C# Code",mode:3}},{label:"JSON Formatter",icon:"pi pi-wrench",routerLink:"/json-tools/formatter",data:{title:"JSON Formatter",subTitle:"Automatically format JSON string with indentations",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Format JSON",mode:0}},{label:"Quote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/json-to-string",data:{title:"Quote JSON text",subTitle:"Convert a JSON object to a string with quotes.",sampleButtonLabel:"Load Sample JSON",actionButtonLabel:"Quote JSON",mode:2}},{label:"Unquote JSON text",icon:"pi pi-wrench",routerLink:"/json-tools/string-to-json",data:{title:"Unquote JSON text",subTitle:"Removes quotes from a quoted JSON string.",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Unquote JSON",mode:1}}],i=[{label:"UUID Generator",icon:"pi pi-wrench",routerLink:"/other-tools/uuid-generator",data:{title:"UUID Generator",subTitle:"Generate UUID"}},{label:"Base64 Encoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-encode",data:{title:"Base64 Encoding",subTitle:"Encoding image or text to base64 text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Encode Base64",mode:4}},{label:"Base64 Decoding",icon:"pi pi-wrench",routerLink:"/other-tools/base64-decode",data:{title:"Base64 Decoding",subTitle:"Decoding base64 text to image or text",sampleButtonLabel:"Load Sample String",actionButtonLabel:"Decode Base64",mode:5}},{label:"Bank Interest Calculator",icon:"pi pi-calculator",routerLink:"/other-tools/toss-interest-calc",data:{title:"Toss Bank Interest Calculator",subTitle:"A simple tool to calculate interest for Toss Bank."}}],p=[{label:"Bitcoin Market Prices",icon:"pi pi-bitcoin",routerLink:"/trading/bitcoin-prices",data:{title:"Bitcoin Market Prices",subTitle:"It compares the real-time Bitcoin market prices of Upbit and Binance, and calculates the Kimchi Premium."}}],T={label:"Home",icon:"pi pi-home",routerLink:"/"};var k=class d{constructor(e){this.router=e}history$=new u([]);get currentMenu(){return this.history$.value.at(-1)}home=g(h({},T),{command:e=>this.navigateTo(e)});flatList=[];items=[];showSideMenu=!1;isLoadingPage=!1;games=[];tools=[];otherTools=[];articleGroups=[];initialized=!1;initMenu(){if(!this.initialized){this.items=[{label:"Games",items:[...s]},{label:"JSON Tools",items:[...c]},{label:"Other Tools",items:[...i]}];let e=[...v].reverse(),t=S.map(a=>g(h({},a),{count:e.filter(n=>n.category===a.category).length}));this.flatList.push(l),this.flatList.push(...e,...s,...c,...i,...t,...p);let r={label:"Trading",items:[...p]};this.items.push(r);let o={label:"Blog",items:[l,...t]};this.items.push(o),this.flatList.forEach(a=>a.command=n=>this.navigateTo(n)),this.games=[...s],this.tools=[...c,...i.filter(a=>a.routerLink!=="/other-tools/toss-interest-calc")],this.otherTools=[i.find(a=>a.routerLink==="/other-tools/toss-interest-calc"),...p],this.articleGroups=[l,...t],this.initialized=!0}}getUrl(e){return e.routerLink}navigateTo(e){this.showSideMenu=!1;let t=w.stripTrailingSlash(this.router.url).split("?")[0];if(t=t===""?"/":t,e.item.routerLink!==t){this.isLoadingPage=!0;let r=e.item;this.router.navigateByUrl(r.routerLink)}}navigateToArticle(e){this.navigateTo({item:e})}getRelevantArticles(e){let t=[];if(e){let r=this.flatList.filter(a=>!a.count&&a.category===e.category),o=r.indexOf(e);[-2,-1,1,2].forEach(a=>{let n=o+a;n>=0&&n<r.length&&t.push(r[n])})}return t}getMenuByUrl(e){return this.flatList.find(t=>t.routerLink===e)}getBlogContentByUrl(e){let t=e.split("/"),r=t.at(-2)??"",o=t.at(-1)??"";return m.find(a=>a.category===r&&a.id===+o)}getBlogContent(e,t){return m.find(r=>r.category===e&&r.id===t)}static \u0275fac=function(t){return new(t||d)(f(y))};static \u0275prov=b({token:d,factory:d.\u0275fac,providedIn:"root"})};export{m as a,S as b,v as c,x as d,M as e,k as f};
