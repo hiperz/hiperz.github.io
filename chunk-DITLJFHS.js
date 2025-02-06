@@ -1,4 +1,4 @@
-import{n as y}from"./chunk-DQWE2V27.js";import{Hc as w,X as b,a as h,aa as f,b as g,p as u}from"./chunk-KZVD5HA2.js";var m=[{category:"csharp",id:16,content:`<h2>Table of Contents</h2>\r
+import{n as y}from"./chunk-CQSSY5IG.js";import{Hc as w,X as b,a as h,aa as f,b as g,p as u}from"./chunk-KZVD5HA2.js";var m=[{category:"csharp",id:16,content:`<h2>Table of Contents</h2>\r
 <ul>\r
     <li><a href="#install">Installing NLog.Web.AspNetCore</a></li>\r
     <li><a href="#program">Configuring Program.cs</a></li>\r
