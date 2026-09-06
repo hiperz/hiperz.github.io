@@ -1,0 +1,1 @@
+import{$a as e,mb as n}from"./chunk-GX5SSQMC.js";var r=class t{uiTooltip="";static \u0275fac=function(i){return new(i||t)};static \u0275dir=e({type:t,selectors:[["","uiTooltip",""]],hostVars:2,hostBindings:function(i,o){i&2&&n("title",o.uiTooltip||null)("aria-label",o.uiTooltip||null)},inputs:{uiTooltip:"uiTooltip"}})};export{r as a};

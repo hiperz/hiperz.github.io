@@ -1,0 +1,1 @@
+import{d as a}from"./chunk-JNESGPAL.js";import{R as i,ab as e}from"./chunk-GX5SSQMC.js";var n=class r{sanitizer=i(a);transform(t){return this.sanitizer.bypassSecurityTrustHtml(t)}static \u0275fac=function(s){return new(s||r)};static \u0275pipe=e({name:"safeHtml",type:r,pure:!0})};export{n as a};

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# A commit UI, not content. It also carries <meta name="robots" content="noindex">,
+# because the two fail differently: this is a request not to crawl, that is an
+# instruction not to index something already fetched.
+Disallow: /admin
+
+Sitemap: https://hiperz.github.io/sitemap.xml
