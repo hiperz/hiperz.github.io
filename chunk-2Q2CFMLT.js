@@ -1,0 +1,1 @@
+import{bb as t}from"./chunk-O5C7XOV2.js";var m=class n{transform(e,r=0){let i=typeof e=="number"?e:Number(e);return Number.isFinite(i)?i.toFixed(r):""}static \u0275fac=function(r){return new(r||n)};static \u0275pipe=t({name:"numberFixed",type:n,pure:!0})};export{m as a};

@@ -1,0 +1,1 @@
+import{bb as e}from"./chunk-O5C7XOV2.js";var i=class n{transform(r,t="en-US"){return r==null?"":new Intl.NumberFormat(t,{minimumFractionDigits:0}).format(Number(r))}static \u0275fac=function(t){return new(t||n)};static \u0275pipe=e({name:"numberFormat",type:n,pure:!0})};export{i as a};
